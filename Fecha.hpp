@@ -8,11 +8,11 @@ class Fecha
 
         //CONSTANTES
         static const int AnnoMinimo;
-        static const int AnooMaximo;
+        static const int AnnoMaximo;
         
         //CONSTRUCTORES
         explicit Fecha(int d = 0, int m = 0, int y = 0);
-        Fecha(const &Fecha fecha);
+        Fecha(const Fecha& fecha);
 
         //CLASE INVALIDA
         class Invalida
@@ -22,12 +22,15 @@ class Fecha
                 const char* por_que()const{return e;}
             private:
                 const char* e;
-        }   
+        };  
 
         //OBSERVADORES
         inline int dia() const {return dia_;}
         inline int mes() const {return mes_;}
         inline int anno() const {return anno_;}
+
+
+        Fecha& operator =(const Fecha& fecha);
     
     private://=>atribitos
         int dia_;
@@ -41,5 +44,12 @@ class Fecha
     
 };
 
+//=>OPERADORES FUERA DE LA CLASE
+bool operator <(const Fecha& fecha1, const Fecha& fecha2);
+bool operator <=(const Fecha& fecha1, const Fecha& fecha2);
+bool operator ==(const Fecha& fecha1, const Fecha& fecha2);
+bool operator >(const Fecha& fecha1, const Fecha& fecha2);
+bool operator >=(const Fecha& fecha1, const Fecha& fecha2);
+bool operator !=(const Fecha& fecha1, const Fecha& fecha2);
 
 #endif

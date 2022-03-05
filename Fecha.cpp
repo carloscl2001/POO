@@ -41,12 +41,12 @@ Fecha::Fecha(const Fecha& f): dia_(f.dia_), mes_(f.mes_), anno_(f.anno_)
 //TODO SUMAS Y RESTAR FECHAS DE ENTEROS CON ASIGNACION 
 
 //=>OPERADOR DE ASIGANCION
-//?PREGUNTAR PEDRO
-Fecha& operator =(const Fecha& fecha)
+Fecha& Fecha::operator =(const Fecha& fecha)
 {
     dia_ = fecha.dia_;
     mes_ = fecha.mes_;
     anno_ = fecha.anno_;
+    return *this;
 }
 
 

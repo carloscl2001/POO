@@ -33,6 +33,7 @@ class Fecha
         Fecha& operator =(const Fecha& fecha);
     
     private://=>atribitos
+    
         int dia_;
         int mes_ ;
         int anno_;

@@ -13,6 +13,7 @@ class Fecha
         //CONSTRUCTORES
         explicit Fecha(int d = 0, int m = 0, int y = 0);
         Fecha(const Fecha& fecha);
+        Fecha(char* fecha);
 
         //CLASE INVALIDA
         class Invalida
@@ -29,8 +30,18 @@ class Fecha
         inline int mes() const {return mes_;}
         inline int anno() const {return anno_;}
 
-
+        //OPERADORES
         Fecha& operator =(const Fecha& fecha);
+
+        Fecha& operator +=(int n);
+        Fecha& operator -=(int n);
+
+        Fecha& operator ++();//pre
+        Fecha& operator ++(int n);//pos
+
+        Fecha& operator --();//pre
+        Fecha& operator --(int n);//pos
+    
     
     private://=>atribitos
     
@@ -52,5 +63,8 @@ bool operator ==(const Fecha& fecha1, const Fecha& fecha2);
 bool operator >(const Fecha& fecha1, const Fecha& fecha2);
 bool operator >=(const Fecha& fecha1, const Fecha& fecha2);
 bool operator !=(const Fecha& fecha1, const Fecha& fecha2);
+
+Fecha operator +(const Fecha& fecha, int n);
+Fecha operator -(const Fecha& fecha, int n);
 
 #endif

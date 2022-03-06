@@ -7,7 +7,7 @@ class Cadena
     public://=>métodos
         
         //CONSTRUCTORES
-        Cadena(size_t s = 0, char c = ' ');
+        explicit Cadena(size_t s = 0, char c = ' ');
         Cadena(const Cadena& cadena);
 
 

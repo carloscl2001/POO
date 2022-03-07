@@ -14,6 +14,7 @@ class Fecha
         explicit Fecha(int d = 0, int m = 0, int y = 0);
         Fecha(const Fecha& fecha);
         Fecha(char* fecha);
+        const char* cadena();
 
         //CLASE INVALIDA
         class Invalida

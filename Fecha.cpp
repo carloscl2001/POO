@@ -43,7 +43,7 @@ Fecha::Fecha(char *fecha)
     std::time_t tiempo_calendario = std::time(nullptr);
 	std::tm* tiempo_descompuesto = std::localtime(&tiempo_calendario);
 	
-	int aux = sscanf(date,"%d/%d/%d", &dia_,&mes_,&anno_);
+	int aux = sscanf(fecha,"%d/%d/%d", &dia_,&mes_,&anno_);
 	
 	if(aux != 3) throw Fecha::Invalida("Formato incorrecto");
 	if(dia_ == 0) { dia_ = tiempo_descompuesto -> tm_mday; }
@@ -53,6 +53,12 @@ Fecha::Fecha(char *fecha)
 	comprobarFecha();
 }
 
+
+//=>DE FECHA A CADENA
+const char* Fecha::cadena()
+{
+    
+}
 //=>OPERADORES
 Fecha& Fecha::operator =(const Fecha& fecha)
 {

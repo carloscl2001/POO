@@ -155,13 +155,13 @@ void Fecha::arreglarFecha()
     tm f={};
     f.tm_mday = dia_;
     f.tm_mon = mes_ - 1;
-    f.tm_year = year_ - 1900;
+    f.tm_year = anno_ - 1900;
 
     mktime(&f);
 
     dia_ = f.tm_mday;
     mes_ = f.tm_mon + 1;
-    year_ = f.tm_year + 1900;
+    anno_ = f.tm_year + 1900;
 }
 
 

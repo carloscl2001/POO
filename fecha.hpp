@@ -1,6 +1,8 @@
 #ifndef FECHA_HPP_
 #define FECHA_HPP_
-
+#include <iostream>
+#include <ctime>
+#include <stdio.h>
 
 class Fecha
 {

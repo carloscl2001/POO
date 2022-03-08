@@ -9,6 +9,8 @@ class Cadena
         //CONSTRUCTORES
         explicit Cadena(size_t s = 0, char c = ' ');
         Cadena(const Cadena& cadena);
+        Cadena(const char* cadena);
+        Cadena(Cadena&& cadena);
 
 
         //OBSERVADOR

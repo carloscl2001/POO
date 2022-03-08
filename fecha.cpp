@@ -1,6 +1,7 @@
 #include "fecha.hpp"
 #include <iostream>
 #include <ctime>
+#include <stdio.h>
 
 const int Fecha::AnnoMinimo(1902);
 const int Fecha::AnnoMaximo(2037);

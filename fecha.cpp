@@ -60,6 +60,8 @@ const char* Fecha::cadena()
 {
     
 }
+
+
 //=>OPERADORES
 Fecha& Fecha::operator =(const Fecha& fecha)
 {

@@ -12,7 +12,7 @@ class Cadena
 
 
         //OBSERVADOR
-        inline size_t length() const {return tam_;}
+        inline size_t length() const noexcept {return tam_;}
 
         //OPERADORES
 

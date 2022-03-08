@@ -36,7 +36,7 @@ bool operator <(const Cadena& cadena1, const Cadena& cadena2)
     if (strcmp(cadena1, cadena2) < 0)
     {
         return true;
-    }
+    }else{return false;}
 }
 
 bool operator <=(const Cadena& cadena1, const Cadena& cadena2)
@@ -44,7 +44,7 @@ bool operator <=(const Cadena& cadena1, const Cadena& cadena2)
     if (strcmp(cadena1, cadena2) <= 0)
     {
         return true;
-    }
+    }else{return false;}
 }
 
 bool operator ==(const Cadena& cadena1, const Cadena& cadena2)
@@ -52,7 +52,7 @@ bool operator ==(const Cadena& cadena1, const Cadena& cadena2)
     if (strcmp(cadena1, cadena2) == 0)
     {
         return true;
-    }
+    }else{return false;}
 }
 
 bool operator >(const Cadena& cadena1, const Cadena& cadena2)
@@ -60,7 +60,7 @@ bool operator >(const Cadena& cadena1, const Cadena& cadena2)
     if (strcmp(cadena1, cadena2) > 0)
     {
         return true;
-    }
+    }else{return false;}
 }
 
 bool operator >=(const Cadena& cadena1, const Cadena& cadena2)
@@ -68,7 +68,7 @@ bool operator >=(const Cadena& cadena1, const Cadena& cadena2)
     if (strcmp(cadena1, cadena2) >= 0)
     {
         return true;
-    }
+    }else{return false;}
 }
 
 bool operator !=(const Cadena& cadena1, const Cadena& cadena2)

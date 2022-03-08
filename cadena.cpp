@@ -25,7 +25,53 @@ Cadena::Cadena(const char* cadena): s_(new char[strlen(cadena)+ 1]), tam_(strlen
 }
 
 //=>CONSTRUCTOR DE MOVIMIENTO
-Cadena::Cadena(Cadena&& cadena)
+Cadena::Cadena(Cadena&& cadena): s_(cadena.s_), tam_(cadena.tam_)
 {
+    cadena.s_ = nullptr;
+    cadena.tam_ = 0;
+}
 
+bool operator <(const Cadena& cadena1, const Cadena& cadena2)
+{
+    if (strcmp(cadena1, cadena2) < 0)
+    {
+        return true;
+    }
+}
+
+bool operator <=(const Cadena& cadena1, const Cadena& cadena2)
+{
+    if (strcmp(cadena1, cadena2) <= 0)
+    {
+        return true;
+    }
+}
+
+bool operator ==(const Cadena& cadena1, const Cadena& cadena2)
+{
+    if (strcmp(cadena1, cadena2) == 0)
+    {
+        return true;
+    }
+}
+
+bool operator >(const Cadena& cadena1, const Cadena& cadena2)
+{
+    if (strcmp(cadena1, cadena2) > 0)
+    {
+        return true;
+    }
+}
+
+bool operator >=(const Cadena& cadena1, const Cadena& cadena2)
+{
+    if (strcmp(cadena1, cadena2) >= 0)
+    {
+        return true;
+    }
+}
+
+bool operator !=(const Cadena& cadena1, const Cadena& cadena2)
+{
+    return !(cadena1 == cadena2);
 }

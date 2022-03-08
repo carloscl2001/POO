@@ -26,4 +26,11 @@ class Cadena
         //FUNCIONES PRIVADAS AUXILIARES
 };
 
+bool operator <(const Cadena& cadena1, const Cadena& cadena2);
+bool operator <=(const Cadena& cadena1, const Cadena& cadena2);
+bool operator ==(const Cadena& cadena1, const Cadena& cadena2);
+bool operator >(const Cadena& cadena1, const Cadena& cadena2);
+bool operator >=(const Cadena& cadena1, const Cadena& cadena2);
+bool operator !=(const Cadena& cadena1, const Cadena& cadena2);
+
 #endif

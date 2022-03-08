@@ -27,9 +27,9 @@ class Fecha
         };  
 
         //OBSERVADORES
-        inline int dia() const {return dia_;}
-        inline int mes() const {return mes_;}
-        inline int anno() const {return anno_;}
+        inline int dia() const noexcept{return dia_;}
+        inline int mes() const noexcept{return mes_;}
+        inline int anno() const noexcept{return anno_;}
 
         //OPERADORES
         Fecha& operator =(const Fecha& fecha);

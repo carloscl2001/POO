@@ -9,7 +9,7 @@ using namespace std;
 
 
 //=>CONSTRUCTOR 
-Fecha::Fecha(int d = 0, int m = 0, int a = 0): dia_(d), mes_(m), anno_(a)
+Fecha::Fecha(int d /*d = 0*/, int m /*m = 0*/ , int a /* a 0 0*/ ): dia_(d), mes_(m), anno_(a)
 {
     std::time_t tiempo_calendario = std::time(nullptr);
     std::tm* tiempo_descompuesto = std::localtime(&tiempo_calendario);

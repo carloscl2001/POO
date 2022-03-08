@@ -31,6 +31,8 @@ Cadena::Cadena(Cadena&& cadena): s_(cadena.s_), tam_(cadena.tam_)
     cadena.tam_ = 0;
 }
 
+
+//=>OPERADORES FUERA DE LA CLASE
 bool operator <(const Cadena& cadena1, const Cadena& cadena2)
 {
     if (strcmp(cadena1, cadena2) < 0)

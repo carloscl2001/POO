@@ -58,7 +58,23 @@ Fecha::Fecha(char *fecha)
 //=>DE FECHA A CADENA
 const char* Fecha::cadena()
 {
+    std::locale::global(std::locale("es_ES.UTF-8"));
+  	
+  	std::time_t tiempo_calendario = std::time(nullptr);
+    std::tm* tiempo_descompuesto = std::localtime(&tiempo_calendario);
+
+    char *cadena = new char[50];
+
     
+   tiempo_descompuesto->tm_mday = dia_;
+   tiempo_descompuesto->tm_mon = mes_ - 1;
+   tiempo_descompuesto->tm_year = anno_ - 1900;
+
+    mktime(tiempo_descompuesto);
+   
+    strftime(cadena,50, "%A %d de %B de %Y", tiempo_descompuesto);
+
+	return cadena;
 }
 
 

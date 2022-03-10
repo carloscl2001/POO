@@ -16,7 +16,12 @@ class Cadena
         //OBSERVADOR
         inline size_t length() const noexcept {return tam_;}
 
+
+        //OPERADOR DE CONVERSION
+        char* c_str() const;
+        
         //OPERADORES
+        Cadena& operator +=(const Cadena& cadena);
 
     private://=>atribitos
 

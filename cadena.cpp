@@ -31,11 +31,23 @@ Cadena::Cadena(Cadena&& cadena): s_(cadena.s_), tam_(cadena.tam_)
     cadena.tam_ = 0;
 }
 
+//=>OPERADOR DE CONVERSION
+char* Cadena::c_str() const
+{
+	return s_;
+}
+
+//=>OPERADORES
+Cadena& Cadena::operator +=(const Cadena& cadena)
+{
+    char* aux = new char[tam_ + 1];
+}
+
 
 //=>OPERADORES FUERA DE LA CLASE
 bool operator <(const Cadena& cadena1, const Cadena& cadena2)
 {
-    if (strcmp(cadena1, cadena2) < 0)
+    if (strcmp(cadena1.c_str(), cadena2.c_str()) < 0)
     {
         return true;
     }else{return false;}
@@ -43,7 +55,7 @@ bool operator <(const Cadena& cadena1, const Cadena& cadena2)
 
 bool operator <=(const Cadena& cadena1, const Cadena& cadena2)
 {
-    if (strcmp(cadena1, cadena2) <= 0)
+    if (strcmp(cadena1.c_str(), cadena2.c_str()) <= 0)
     {
         return true;
     }else{return false;}
@@ -51,7 +63,7 @@ bool operator <=(const Cadena& cadena1, const Cadena& cadena2)
 
 bool operator ==(const Cadena& cadena1, const Cadena& cadena2)
 {
-    if (strcmp(cadena1, cadena2) == 0)
+    if (strcmp(cadena1.c_str(), cadena2.c_str()) == 0)
     {
         return true;
     }else{return false;}
@@ -59,7 +71,7 @@ bool operator ==(const Cadena& cadena1, const Cadena& cadena2)
 
 bool operator >(const Cadena& cadena1, const Cadena& cadena2)
 {
-    if (strcmp(cadena1, cadena2) > 0)
+    if (strcmp(cadena1.c_str(), cadena2.c_str()) > 0)
     {
         return true;
     }else{return false;}
@@ -67,7 +79,7 @@ bool operator >(const Cadena& cadena1, const Cadena& cadena2)
 
 bool operator >=(const Cadena& cadena1, const Cadena& cadena2)
 {
-    if (strcmp(cadena1, cadena2) >= 0)
+    if (strcmp(cadena1.c_str(), cadena2.c_str()) >= 0)
     {
         return true;
     }else{return false;}

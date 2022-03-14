@@ -22,6 +22,7 @@ class Cadena
         
         //OPERADORES
         Cadena& operator +=(const Cadena& cadena);
+        Cadena& operator =(const Cadena& cadena);
 
     private://=>atribitos
 
@@ -29,6 +30,7 @@ class Cadena
         size_t tam_;
 
         //FUNCIONES PRIVADAS AUXILIARES
+        void copiar(const Cadena& cadena);
 };
 
 bool operator <(const Cadena& cadena1, const Cadena& cadena2);

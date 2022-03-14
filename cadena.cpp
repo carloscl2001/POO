@@ -41,6 +41,35 @@ char* Cadena::c_str() const
 Cadena& Cadena::operator +=(const Cadena& cadena)
 {
     char* aux = new char[tam_ + 1];
+    strcpy(aux, s_);
+
+    delete[] s_;
+    tam_ += cadena.tam_;
+    s_ = new char[tam_ + 1];
+
+    strcpy(s_, aux);
+    strcpy(s_, cadena.s_);
+}
+
+Cadena& Cadena::operator =(const Cadena& cadena)
+{
+    if( this != &cadena)
+	{
+		copiar(cadena);
+	}
+	return *this;
+}
+
+
+
+//=>FUNCION AUXILIAR COPIAR
+void Cadena::copiar(const Cadena& cadena)
+{
+	delete[]s_;
+	tam_ = cadena.tam_;
+
+	s_ = new char[tam_ + 1];
+	strcpy(s_, cadena.s_);
 }
 
 

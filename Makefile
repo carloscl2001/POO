@@ -5,7 +5,7 @@ VPATH = ../Tests-auto:.
 #Compilador y opciones
 CXX = clang++								  #Variable #Compilador de C++
 
-CPPFLAGS = -I../Tests-auto -I. -DP1       #Variables de opciones del preprocesador
+CPPFLAGS = -I../Tests-auto -I. -DP0       #Variables de opciones del preprocesador
 CXXFLAGS = -g -Wall -pedantic -std=c++11 #Variables de opciones del Compilador	
 LDFFLAGS = 								  #Variables de opciones del enlazador
 

@@ -16,9 +16,9 @@ Fecha::Fecha(int d /*d = 0*/, int m /*m = 0*/ , int a /* a 0 0*/ ): dia_(d), mes
 
     //En caso de 0 => asignamos la fecha del sistema 
 
-    if (dia_ == 0) {int dia_ = tiempo_descompuesto->tm_mday;}
-    if (mes_ == 0) {int mes_ = tiempo_descompuesto->tm_mon + 1;}
-    if (anno_ == 0) {int anno_ = tiempo_descompuesto->tm_year + 1900;}
+    if (dia_ == 0) {dia_ = tiempo_descompuesto->tm_mday;}
+    if (mes_ == 0) {mes_ = tiempo_descompuesto->tm_mon + 1;}
+    if (anno_ == 0) {anno_ = tiempo_descompuesto->tm_year + 1900;}
 
     comprobarFecha();
 }
@@ -31,9 +31,9 @@ Fecha::Fecha(const Fecha& f): dia_(f.dia_), mes_(f.mes_), anno_(f.anno_)
 
     //En caso de 0 => asignamos la fecha del sistema 
 
-    if (dia_ == 0) {int dia_ = tiempo_descompuesto->tm_mday;}
-    if (mes_ == 0) {int mes_ = tiempo_descompuesto->tm_mon + 1;}
-    if (anno_ == 0) {int anno_ = tiempo_descompuesto->tm_year + 1900;}
+    if (dia_ == 0) {dia_ = tiempo_descompuesto->tm_mday;}
+    if (mes_ == 0) {mes_ = tiempo_descompuesto->tm_mon + 1;}
+    if (anno_ == 0) {anno_ = tiempo_descompuesto->tm_year + 1900;}
 
     comprobarFecha();
 }
@@ -56,7 +56,7 @@ Fecha::Fecha(char *fecha)
 
 
 //=>DE FECHA A CADENA
-const char* Fecha::cadena()
+Fecha::operator const char*() const
 {
     std::locale::global(std::locale("es_ES.UTF-8"));
   	
@@ -137,26 +137,30 @@ void Fecha::comprobarFecha()
     int n_Dias_Mes = 0;
     n_Dias_Mes = nDiasMes();
 
-    //anno valido
-    if( anno_ < AnnoMinimo || anno_ > AnnoMaximo)
-    {
-        Fecha::Invalida fallo("Anno invalido");
-        throw fallo;
-    }
+    try{//anno valido
+        if( anno_ < AnnoMinimo || anno_ > AnnoMaximo)
+        {
+            Fecha::Invalida fallo("Anno invalido");
+            throw fallo;
+        }
 
-    //mes valido
-    if( mes_ < 1 || mes_ > 12)
-    {
-        Fecha::Invalida fallo("Mes invalido");
-        throw fallo;
-    }
+        //mes valido
+        if( mes_ < 1 || mes_ > 12)
+        {
+            Fecha::Invalida fallo("Mes invalido");
+            throw fallo;
+        }
 
-    //dia valido
-    if( dia_ > n_Dias_Mes || dia_ < 1)
-    {
-        Fecha::Invalida fallo("Dia invalido");
-        throw fallo;
+        //dia valido
+        if( dia_ > n_Dias_Mes || dia_ < 1)
+        {
+            Fecha::Invalida fallo("Dia invalido");
+            throw fallo;
+        }
+    }catch(Fecha::Invalida e){
+        std::cout<<e.por_que()<<std::endl;
     }
+    
 }
 
 
@@ -165,8 +169,8 @@ int Fecha::nDiasMes()
 {
 
     if (mes_ == 1 || mes_ == 3 || mes_ == 5 || mes_ == 7 || mes_ == 8 || mes_ == 10 || mes_ == 12) { return 31;}
-    if (mes_ == 4 || mes_ == 6 || mes_ == 9 || mes_ == 11) { return 30;}
-    if (mes_ == 2)
+    else if (mes_ == 4 || mes_ == 6 || mes_ == 9 || mes_ == 11) { return 30;}
+    else if (mes_ == 2)
     {
         if (anno_ % 4 == 0 && (anno_ % 400 == 0 || anno_ % 100 != 0)) {return 29;}
         else{ return 28;} 
@@ -218,6 +222,7 @@ bool operator <=(const Fecha& fecha1, const Fecha& fecha2)
 bool operator ==(const Fecha& fecha1, const Fecha& fecha2)
 {
     if(fecha1.anno() == fecha2.anno() && fecha1.mes() == fecha2.mes() && fecha1.dia() == fecha2.dia()) {return true;}
+    else{return false;}
 }
 
 bool operator >(const Fecha& fecha1, const Fecha& fecha2)

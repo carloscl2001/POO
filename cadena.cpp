@@ -32,7 +32,7 @@ Cadena::Cadena(Cadena&& cadena): s_(cadena.s_), tam_(cadena.tam_)
 }
 */
 //=>OPERADOR DE CONVERSION
-char* Cadena::c_str() const
+Cadena::operator const char*() const
 {
 	return s_;
 }

@@ -16,17 +16,18 @@ class Cadena
 
         //OBSERVADOR
         inline size_t length() const noexcept {return tam_;}
+        inline char* c_str() const {return s_;}
 
 
         //OPERADOR DE CONVERSION
-        char* c_str() const;
+        operator const char*() const;
         
         //OPERADORES
         Cadena& operator +=(const Cadena& cadena);
         Cadena& operator =(const Cadena& cadena);
 
         inline char& operator[](size_t i) const{ return s_[i];};
-        inline char& operator[](size_t i) const{ return s_[i];};
+        inline char& operator[](size_t i){ return s_[i];};
 
         char& at (size_t i) const;
         char& at (size_t i);

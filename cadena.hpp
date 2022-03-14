@@ -10,7 +10,7 @@ class Cadena
         explicit Cadena(size_t s = 0, char c = ' ');
         Cadena(const Cadena& cadena);
         Cadena(const char* cadena);
-        Cadena(Cadena&& cadena);
+        //Cadena(Cadena&& cadena);
 
 
         //OBSERVADOR
@@ -23,6 +23,14 @@ class Cadena
         //OPERADORES
         Cadena& operator +=(const Cadena& cadena);
         Cadena& operator =(const Cadena& cadena);
+
+        inline char& operator[](size_t i) const{ return s_[i];};
+        inline char& operator[](size_t i) const{ return s_[i];};
+
+        char& at (size_t i) const;
+        char& at (size_t i);
+
+        Cadena& substr(size_t i, size_t t);
 
     private://=>atribitos
 
@@ -40,4 +48,5 @@ bool operator >(const Cadena& cadena1, const Cadena& cadena2);
 bool operator >=(const Cadena& cadena1, const Cadena& cadena2);
 bool operator !=(const Cadena& cadena1, const Cadena& cadena2);
 
+Cadena operator + (const Cadena& cadena1, const Cadena& cadena2);
 #endif

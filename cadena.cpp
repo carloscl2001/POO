@@ -23,14 +23,14 @@ Cadena::Cadena(const char* cadena): s_(new char[strlen(cadena)+ 1]), tam_(strlen
 {
     strcpy(s_, cadena);
 }
-
+/*
 //=>CONSTRUCTOR DE MOVIMIENTO
 Cadena::Cadena(Cadena&& cadena): s_(cadena.s_), tam_(cadena.tam_)
 {
     cadena.s_ = nullptr;
     cadena.tam_ = 0;
 }
-
+*/
 //=>OPERADOR DE CONVERSION
 char* Cadena::c_str() const
 {
@@ -60,7 +60,31 @@ Cadena& Cadena::operator =(const Cadena& cadena)
 	return *this;
 }
 
+char& Cadena::at(size_t i) const
+{
+    if (i< tam_) {return s_[i];}
+    else{throw std::out_of_range("AT CONST");}
+}
 
+char& Cadena::at(size_t i) 
+{
+    if (i< tam_) {return s_[i];}
+    else{throw std::out_of_range("AT");}
+}
+
+Cadena& Cadena::substr(size_t i, size_t t)
+{
+    if(i < t)
+    {
+        Cadena aux(t);
+		strncpy(aux.s_, s_ +i, t);
+		aux.s_[t] = '\0';
+		return aux;
+    }
+    else{
+        throw std::out_of_range("SUBSTR");
+    }
+}
 
 //=>FUNCION AUXILIAR COPIAR
 void Cadena::copiar(const Cadena& cadena)
@@ -117,4 +141,10 @@ bool operator >=(const Cadena& cadena1, const Cadena& cadena2)
 bool operator !=(const Cadena& cadena1, const Cadena& cadena2)
 {
     return !(cadena1 == cadena2);
+}
+
+
+Cadena operator + (const Cadena& cadena1, const Cadena& cadena2)
+{
+    return Cadena(cadena1) += cadena2;
 }

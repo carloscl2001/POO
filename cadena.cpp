@@ -72,7 +72,7 @@ char& Cadena::at(size_t i)
     else{throw std::out_of_range("AT");}
 }
 
-Cadena& Cadena::substr(size_t i, size_t t)
+Cadena& Cadena::substr(size_t i, size_t t) const
 {
     if(i < t)
     {

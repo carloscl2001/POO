@@ -30,7 +30,7 @@ class Cadena
         char& at (size_t i) const;
         char& at (size_t i);
 
-        Cadena& substr(size_t i, size_t t);
+        Cadena& substr(size_t i, size_t t) const;
 
     private://=>atribitos
 

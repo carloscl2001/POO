@@ -1,7 +1,8 @@
 #ifndef CADENA_HPP_
 #define CADENA_HPP_
-
-
+#include <iostream>
+#include <cstdlib>
+#include <cstring>
 class Cadena
 {
     public://=>métodos

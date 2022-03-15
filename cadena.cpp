@@ -48,7 +48,7 @@ Cadena& Cadena::operator +=(const Cadena& cadena)
     s_ = new char[tam_ + 1];
 
     strcpy(s_, aux);
-    strcpy(s_, cadena.s_);
+    strcat(s_, cadena.s_);
 
     return *this;
 }

@@ -76,7 +76,7 @@ char& Cadena::at(size_t i)
 
 Cadena Cadena::substr(size_t i, size_t t) const
 {
-    if(i <= t && i >= 0 && t > 0 && i<= tam_ -1 && t <= tam_)
+    if(i <= t && i >= 0 && i< tam_ && t > 0 && t <= tam_ )
     {
         Cadena aux(t);
 		strncpy(aux.s_, s_ +i, t);

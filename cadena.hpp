@@ -29,8 +29,8 @@ class Cadena
         inline char& operator[](size_t i) const{ return s_[i];};
         inline char& operator[](size_t i){ return s_[i];};
 
-        char& at (size_t i) const;
-        char& at (size_t i);
+        char& at(size_t i) const;
+        char& at(size_t i);
 
         Cadena substr(size_t i, size_t t) const;
 

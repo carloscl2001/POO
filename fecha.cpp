@@ -197,19 +197,19 @@ bool operator <(const Fecha& fecha1, const Fecha& fecha2)
 {
     if( fecha1.anno() < fecha2.anno()) { return true;}
     
-    if( fecha1.anno() == fecha2.anno())
+    else if( fecha1.anno() == fecha2.anno())
     {
         if(fecha1.mes() < fecha2.mes()){ return true;}
 
-        if(fecha1.mes() == fecha2.mes())
+        else if(fecha1.mes() == fecha2.mes())
         {
             if(fecha1.dia() < fecha2.dia()){ return true;}
-            else{return true;}
+            else{return false;}
 
         }else{return false;}
         
     }
-    else{return true;}
+    else{return false;}
 }
 
 bool operator <=(const Fecha& fecha1, const Fecha& fecha2)
@@ -227,20 +227,21 @@ bool operator >(const Fecha& fecha1, const Fecha& fecha2)
 {
     if( fecha1.anno() > fecha2.anno()) { return true;}
     
-    if( fecha1.anno() == fecha2.anno())
+    else if( fecha1.anno() == fecha2.anno())
     {
         if(fecha1.mes() > fecha2.mes()){ return true;}
 
-        if(fecha1.mes() == fecha2.mes())
+        else if(fecha1.mes() == fecha2.mes())
         {
             if(fecha1.dia() > fecha2.dia()){ return true;}
-            else{return true;}
+            else{return false;}
 
         }else{return false;}
         
     }
-    else{return true;}
+    else{return false;}
 }
+
 
 bool operator >=(const Fecha& fecha1, const Fecha& fecha2)
 {

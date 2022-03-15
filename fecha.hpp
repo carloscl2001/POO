@@ -3,6 +3,8 @@
 #include <iostream>
 #include <ctime>
 #include <stdio.h>
+#include <cstdlib>
+#include <cstring>
 
 class Fecha
 {
@@ -14,7 +16,7 @@ class Fecha
         
         //CONSTRUCTORES
         explicit Fecha(int d = 0, int m = 0, int a = 0);
-        Fecha(const Fecha& fecha);
+        //Fecha(const Fecha& fecha);
         Fecha(char* fecha);
         operator const char*() const;
 
@@ -34,16 +36,16 @@ class Fecha
         inline int anno() const noexcept{return anno_;}
 
         //OPERADORES
-        Fecha& operator =(const Fecha& fecha);
+        //Fecha& operator =(const Fecha& fecha);
 
         Fecha& operator +=(int n);
         Fecha& operator -=(int n);
 
-        Fecha& operator ++();//pre
-        Fecha& operator ++(int n);//pos
+        Fecha& operator ++();//preincremento
+        Fecha& operator ++(int n);//posincremento
 
-        Fecha& operator --();//pre
-        Fecha& operator --(int n);//pos
+        Fecha& operator --();//predecremento
+        Fecha& operator --(int n);//posdecremento
     
     
     private://=>atribitos

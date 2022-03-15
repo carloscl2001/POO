@@ -22,7 +22,7 @@ Fecha::Fecha(int d /*d = 0*/, int m /*m = 0*/ , int a /* a 0 0*/ ): dia_(d), mes
 
     comprobarFecha();
 }
-
+/*
 //=>CONSTRUCTOR DE COPIA
 Fecha::Fecha(const Fecha& f): dia_(f.dia_), mes_(f.mes_), anno_(f.anno_)
 {
@@ -37,6 +37,7 @@ Fecha::Fecha(const Fecha& f): dia_(f.dia_), mes_(f.mes_), anno_(f.anno_)
 
     comprobarFecha();
 }
+*/
 
 //=>CONSTRUCTOR DE CADENA DE BAJO NIVEL
 Fecha::Fecha(char *fecha)
@@ -79,6 +80,7 @@ Fecha::operator const char*() const
 
 
 //=>OPERADORES
+/*
 Fecha& Fecha::operator =(const Fecha& fecha)
 {
     dia_ = fecha.dia_;
@@ -86,7 +88,7 @@ Fecha& Fecha::operator =(const Fecha& fecha)
     anno_ = fecha.anno_;
     return *this;
 }
-
+*/
 
 Fecha& Fecha::operator +=(int n)
 {
@@ -126,7 +128,7 @@ Fecha& Fecha::operator --()
 Fecha& Fecha::operator --(int n)
 {
     Fecha *aux = new Fecha(*this);
-    *this += 1;
+    *this -= 1;
     return *aux;
 }
 
@@ -137,7 +139,6 @@ void Fecha::comprobarFecha()
     int n_Dias_Mes = 0;
     n_Dias_Mes = nDiasMes();
 
-    try{//anno valido
         if( anno_ < AnnoMinimo || anno_ > AnnoMaximo)
         {
             Fecha::Invalida fallo("Anno invalido");
@@ -157,10 +158,6 @@ void Fecha::comprobarFecha()
             Fecha::Invalida fallo("Dia invalido");
             throw fallo;
         }
-    }catch(Fecha::Invalida e){
-        std::cout<<e.por_que()<<std::endl;
-    }
-    
 }
 
 
@@ -175,6 +172,7 @@ int Fecha::nDiasMes()
         if (anno_ % 4 == 0 && (anno_ % 400 == 0 || anno_ % 100 != 0)) {return 29;}
         else{ return 28;} 
     }
+    else{ return 30;}
 }
 
 

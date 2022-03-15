@@ -49,6 +49,8 @@ Cadena& Cadena::operator +=(const Cadena& cadena)
 
     strcpy(s_, aux);
     strcpy(s_, cadena.s_);
+
+    return *this;
 }
 
 Cadena& Cadena::operator =(const Cadena& cadena)
@@ -72,18 +74,16 @@ char& Cadena::at(size_t i)
     else{throw std::out_of_range("AT");}
 }
 
-Cadena& Cadena::substr(size_t i, size_t t) const
+Cadena Cadena::substr(size_t i, size_t t) const
 {
-    if(i < t)
+    if(i <= t && i >= 0 && t > 0 && i<= tam_ -1 && t <= tam_)
     {
         Cadena aux(t);
 		strncpy(aux.s_, s_ +i, t);
 		aux.s_[t] = '\0';
 		return aux;
     }
-    else{
-        throw std::out_of_range("SUBSTR");
-    }
+    else{throw std::out_of_range("SUBSTR");}
 }
 
 //=>FUNCION AUXILIAR COPIAR

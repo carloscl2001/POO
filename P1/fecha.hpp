@@ -18,7 +18,7 @@ class Fecha
         //CONSTRUCTORES
         explicit Fecha(int d = 0, int m = 0, int a = 0);
         //Fecha(const Fecha& fecha);
-        Fecha(char* fecha);
+        Fecha(const char* fecha);
         const char* cadena() const noexcept;
 
         //CLASE INVALIDA

@@ -42,7 +42,7 @@ Fecha::Fecha(const Fecha& f): dia_(f.dia_), mes_(f.mes_), anno_(f.anno_)
 */
 
 //=>CONSTRUCTOR DE CADENA DE BAJO NIVEL
-Fecha::Fecha(char *fecha)
+Fecha::Fecha(const char *fecha)
 {
     std::time_t tiempo_calendario = std::time(nullptr);
 	std::tm* tiempo_descompuesto = std::localtime(&tiempo_calendario);

@@ -2,5 +2,5 @@
 
 bool operator < (const terna& t)
 {
-
+    
 }

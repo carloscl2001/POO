@@ -15,6 +15,8 @@ class  MatrizDispersa
 
         bool buscar(size_t fil, size_t col, size_t& indice);
 
+        bool operator < (const terna& t1);
+
     public:
         explicit MatrizDispersa(int f = 1, int c = 1);
         void asignar();
@@ -23,5 +25,5 @@ class  MatrizDispersa
         inline size_t columnas() const noexcept {return n;}
         size_t n_valores() const;
 
-        bool operator < (const terna& t);
 };
+

@@ -22,4 +22,6 @@ class  MatrizDispersa
         inline size_t filas() const noexcept {return m;}
         inline size_t columnas() const noexcept {return n;}
         size_t n_valores() const;
+
+        bool operator < (const terna& t);
 };

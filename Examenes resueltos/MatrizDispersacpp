@@ -1,0 +1,6 @@
+#include "MatrizDispersa.hpp"
+
+bool operator < (const terna& t)
+{
+
+}

@@ -1,10 +1,11 @@
 #include "cadena.hpp"
 #include "fecha.hpp"
+#include <iostream>
 
 class Articulo
 {
     public:
-    
+
         //CONSTRUCTOR
         Articulo(Cadena r, Cadena t, Fecha f, double p, int e = 0);
         
@@ -25,3 +26,5 @@ class Articulo
         int n_ejem_vent_;
 
 };
+
+std::ostream& operator <<(std::ostream os, const Articulo& art);

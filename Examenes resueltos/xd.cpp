@@ -15,6 +15,7 @@ bool MatrizDispersa::buscar(size_t fil, size_t col, size_t& indice)
             return true;
         }
         else{
+            wfwff
         }
             
     }

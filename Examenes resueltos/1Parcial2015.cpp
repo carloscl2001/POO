@@ -11,6 +11,8 @@ class Vector
         Vector(const Vector& v);
         Vector(Vector&& v);
         ~Vector();
+        double& at(size_t i);
+        double at(size_t t)const;
 
     private:
         size_t n;
@@ -53,3 +55,40 @@ Vector::Vector(Vector&& v): n(v.n), datos(v.datos)
     v.n = 0;
     v.datos = nullptr;
 }
+
+double& Vector::at(size_t i)
+{
+    if(i < n)
+    {
+        throw std::out_of_range("Indice fuera del rango");
+    }
+    else{
+        return datos[i];
+    }
+}
+
+double Vector::at(size_t i) const
+{
+    if(i < n)
+    {
+        throw std::out_of_range("Indice fuera del rango");
+    }
+    else{
+        return datos[i];
+    }
+}
+
+
+class doble
+{
+    public:
+        doble(double n);
+        inline operator double(){return d;}
+    private:
+        double d;
+};
+
+doble::doble(double n): d(n){}
+
+
+

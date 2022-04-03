@@ -12,7 +12,7 @@ class Vector
         Vector(Vector&& v);
         ~Vector();
         double& at(size_t i);
-        double at(size_t t)const;
+        double at(size_t t)const noexcept;
 
     private:
         size_t n;
@@ -67,7 +67,7 @@ double& Vector::at(size_t i)
     }
 }
 
-double Vector::at(size_t i) const
+double Vector::at(size_t i) const noexcept
 {
     if(i < n)
     {
@@ -94,6 +94,7 @@ int main(){
 double a = 1.5, b= 10.5;
 doble c = 5.25,
 d=c;
+
 double e = 4;
 e = c;
 std::cout << c / d * b + b * c - c * c / b + b / c << std::endl; //65

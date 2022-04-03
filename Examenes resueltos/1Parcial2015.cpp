@@ -91,13 +91,13 @@ class doble
 doble::doble(double n): d(n){}
 
 int main(){
-double a = 1.5, b= 10.5;
-doble c = 5.25,
-d=c;
+    double a = 1.5, b= 10.5;
+    doble c = 5.25,
+    d=c;
 
-double e = 4;
-e = c;
-std::cout << c / d * b + b * c - c * c / b + b / c << std::endl; //65
-d = a = b += c;
-std::cout << d << ' ' << a << ' ' << b << ' '<< c << ' ' << e <<std::endl; // 15,75 15,75 15,75 5,25
+    double e = 4;
+    e = c;
+    std::cout << c / d * b + b * c - c * c / b + b / c << std::endl; //65
+    d = a = b += c;
+    std::cout << d << ' ' << a << ' ' << b << ' '<< c << ' ' << e <<std::endl; // 15,75 15,75 15,75 5,25
 }

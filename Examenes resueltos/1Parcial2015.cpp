@@ -43,7 +43,7 @@ Vector::Vector(const Vector& v): n(v.n), datos(new double[v.n])
     }
 }
 
-Vector::Vector(Vector&& v): n(v.n), datos(new double[v.n])
+Vector::Vector(Vector&& v): n(v.n), datos(v.datos)
 {
     for(int i = 0; i < n; i++)
     {

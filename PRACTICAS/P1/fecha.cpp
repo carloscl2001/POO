@@ -98,7 +98,7 @@ Fecha& Fecha::operator +=(int n)
     arreglarFecha();
     comprobarFecha();
     return *this;
-} 
+}
 
 
 Fecha& Fecha::operator -=(int n)

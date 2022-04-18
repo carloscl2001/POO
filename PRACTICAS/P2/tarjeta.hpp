@@ -56,7 +56,7 @@ class Tarjeta
         
         //OBSERVADORES
         Numero numero() const{return numero_;}
-        const Usuario* titular() const {return usuario_;}
+        Usuario* titular() const {return usuario_;}
         Fecha caducidad() const{return fech_caducidad;}
         bool activa() const {return actividad_;}
         Tipo tipo() const{return tipo_;}
@@ -80,7 +80,7 @@ class Tarjeta
     private:
         Tipo tipo_;
         Numero numero_;
-        const Usuario* usuario_;
+        mutable Usuario* usuario_;
         Fecha fech_caducidad;
         bool actividad_;
 

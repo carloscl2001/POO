@@ -40,6 +40,9 @@ class Clave
     //CLASE USUARIO
 //
 //
+
+class Numero;
+class Tarjeta;
 class Usuario 
 {
     public:

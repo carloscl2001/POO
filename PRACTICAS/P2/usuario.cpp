@@ -33,7 +33,7 @@ Clave::Clave(const char* cadena)
 
 bool Clave::verifica(const char* cad) const
 {
-    if(strcmp(crypt(cadena, contasena_.c_str()), contrasena_.c_str()) == 0)
+    if(strcmp(crypt(cadena, contrasena_.c_str()), contrasena_.c_str()) == 0)
     {
         return true;
     }

@@ -1,5 +1,5 @@
-#include "cadena.hpp"
-#include "fecha.hpp"
+#include "../P1/cadena.hpp"
+#include "../P1/fecha.hpp"
 #include <iostream>
 
 class Articulo

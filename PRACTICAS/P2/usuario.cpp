@@ -35,7 +35,7 @@ Clave::Clave(const char* cadena)
     contrasena_ = crypt(cadena, cifrar);
 }
 
-bool Clave::verifica(const char* cad) const
+bool Clave::verifica(const char* cadena) const
 {
     if(strcmp(crypt(cadena, contrasena_.c_str()), contrasena_.c_str()) == 0)
     {
@@ -52,7 +52,7 @@ bool Clave::verifica(const char* cad) const
 //
 //
 
-Usuario::Usuario(const Cadena i, const Cadena n, const Cadena a, const Cadena d, const Clave c, const Tarjetas t, const Articulos at):identificador_(i), nombre_(n), apellidos_(a), dirreccion_(d), contrasena_(c), tarjetas_(t), articulos_(at)
+Usuario::Usuario(const Cadena i, const Cadena n, const Cadena a, const Cadena d, const Clave c, const Tarjetas t, const Articulos at):identificador_(i), nombre_(n), apellidos_(a), direccion_(d), contrasena_(c), tarjetas_(t), articulos_(at)
 {
     if(!usuario_.insert(identificador_).second)
     {
@@ -80,9 +80,9 @@ std::ostream& mostrar_carro(std::ostream& output, const Usuario& u)
        << "Cant.ArtÃ­culo"<< std::endl
        << std::setw(95) << std::setfill('=') << '\n' << std::setfill(' ');
 
-    int nart = u.n_articulos() ;
+    int n_art = u.n_articulos() ;
 
-    while( nart > 0 )
+    while( n_art > 0 )
     {
         for(auto i = u.compra().begin(); i != u.compra().end(); i++)
         {
@@ -92,7 +92,7 @@ std::ostream& mostrar_carro(std::ostream& output, const Usuario& u)
                    << (*i->first).f_publi().anno()
                    << ". " << std::fixed << std::setprecision(2) << (*i->first).precio() << " â‚¬" << std::endl;
 
-            --nart;
+            --n_art;
         }
     }
 
@@ -101,8 +101,8 @@ std::ostream& mostrar_carro(std::ostream& output, const Usuario& u)
 
 std::ostream& operator <<(std::ostream& output, const Usuario& u)
 {
-    output << u.id()<< "[" << u.contrasena_ << "]" << u.nombre() << u.apellidos() << "\n"
-       << u.direccion() << std::endl;
+output << u.identificador_ << "[" << u.contrasena_.clave().c_str() << "]" << u.nombre_ << u.apellidos_ << "\n"
+       << u.direccion_ << std::endl;
     output <<"Tarjetas:" ;
     for(auto i = u.tarjetas().begin(); i != u.tarjetas().end(); i++)
     {

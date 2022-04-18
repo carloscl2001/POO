@@ -34,7 +34,8 @@ class Clave
         };
 
         Usuario& operator =(const Usuario& u) = delete;
-        Usuario(const Usuario& u) = delete;
+        Usuario Usuario(const Usuario& u) = delete;
+
 
     private:
         Cadena contrasena_;
@@ -83,11 +84,13 @@ class Usuario
             Cadena id_;
         };
 
+        friend std::ostream& operator <<(std::ostream& output, const Usuario& user);
+
     private:
         Cadena identificador_;
         Cadena nombre_;
         Cadena apellidos_;
-        Cadena dirreccion_;
+        Cadena direccion_;
 
         Clave contrasena_;
 
@@ -98,6 +101,6 @@ class Usuario
         static Usuarios usuario_;
 };
 
-
+std::ostream& mostrar_carro(std::ostream& output, const Usuario& user);
 
 #endif

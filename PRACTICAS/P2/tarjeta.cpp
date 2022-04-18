@@ -41,7 +41,6 @@ Cadena Numero::longitud_cadena(const Cadena& cad)
     {
         throw Incorrecto(Razon::LONGITUD);
     }
-
     return aux;
 }
 

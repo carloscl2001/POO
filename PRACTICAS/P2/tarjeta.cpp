@@ -6,6 +6,7 @@
 #include <iostream>
 
 bool luhn(const Cadena& num);
+
 //CONSTRUCTOR
 Numero::Numero(const Cadena& cad):num_(longitud_cadena(cad))
 {

@@ -32,6 +32,10 @@ class Clave
             private:
                 Razon r_;
         };
+
+        Usuario& operator =(const Usuario& u) = delete;
+        Usuario(const Usuario& u) = delete;
+
     private:
         Cadena contrasena_;
 };

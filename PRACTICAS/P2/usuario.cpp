@@ -101,7 +101,7 @@ std::ostream& mostrar_carro(std::ostream& output, const Usuario& u)
 
 std::ostream& operator <<(std::ostream& output, const Usuario& u)
 {
-    output << u.id()<< "[" << u.password_() << "]" << u.nombre() << u.apellidos() << "\n"
+    output << u.id()<< "[" << u.contrasena_ << "]" << u.nombre() << u.apellidos() << "\n"
        << u.direccion() << std::endl;
     output <<"Tarjetas:" ;
     for(auto i = u.tarjetas().begin(); i != u.tarjetas().end(); i++)

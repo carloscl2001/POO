@@ -69,7 +69,6 @@ Tarjeta::Tarjeta(const Numero& n, Usuario& u, const Fecha& f): numero_(n), usuar
 
     const char* aux = n;
 
-
     switch(aux[0]){
         case '4':
             tipo_ = Tipo::VISA;

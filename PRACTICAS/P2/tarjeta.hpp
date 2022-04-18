@@ -53,7 +53,17 @@ class Tarjeta
     public:
         enum Tipo {Otro,VISA,MasterCard, Maestro, JCB, AmericanExpress};
         Tarjeta(const Numero& n, Usuario& u, const Fecha& f);
-    
+        
+        //OBSERVADORES
+        Numero numero() const{return numero_;}
+        const Usuario* titular() const {return usuario_;}
+        Fecha caducidad() const{return fech_caducidad;}
+        bool activa() const {return actividad_;}
+        Tipo tipo() const{return tipo_;}
+
+        
+
+        
         class Caducada{
         public:
             Caducada(const Fecha& f):fc_(f){}

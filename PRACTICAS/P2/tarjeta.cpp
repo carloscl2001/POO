@@ -30,12 +30,12 @@ Cadena Numero::elimina_espacios(const Cadena& cad)
 
     std::remove_if(aux.begin(),aux.end()+1,[](char c){return isspace(c);});
 
-    return Cadena(aux.c_str()) ;
+    return Cadena(aux.c_str());
 }
 
 Cadena Numero::longitud_cadena(const Cadena& cad)
 {
-    Cadena aux = elimina_espacios(cad) ;
+    Cadena aux = elimina_espacios(cad);
 
     if(aux.length() > 19 || aux.length() == 0 || aux.length() < 13 )
     {

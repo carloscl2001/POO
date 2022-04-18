@@ -44,7 +44,7 @@ class Tarjeta
     
     private:
         Numero numero_;
-        Usuario* usuario;
+        const Usuario* usuario;
         Fecha fech_caducidad;
         bool vacia();
 

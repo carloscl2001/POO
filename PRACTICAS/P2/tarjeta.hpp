@@ -50,12 +50,21 @@ class Numero
 class Tarjeta
 {
     public:
-        enum Tipo {Otro,Visa,MasterCard, Maestro, JCB, AmericanExpress};
+        enum Tipo {Otro,VISA,MasterCard, Maestro, JCB, AmericanExpress};
+        Tarjeta(const Numero& n, Usuario& u, const Fecha& f);
+    
+        class Caducada{
+        public:
+            Caducada(const Fecha& f):fc_(f){}
+            Fecha cuando() const {return fc_;}
+        private:
+            Fecha fc_;
+        };
     
     private:
         Tipo tipo_;
         Numero numero_;
-        const Usuario* usuario;
+        const Usuario* usuario_;
         Fecha fech_caducidad;
         bool vacia();
 

@@ -7,6 +7,12 @@
 
 bool luhn(const Cadena& num);
 
+//
+//
+    //CLASE NUMERO
+//
+//
+
 //CONSTRUCTOR
 Numero::Numero(const Cadena& cad):num_(longitud_cadena(cad))
 {
@@ -51,6 +57,40 @@ bool operator <(const Numero& n1, const Numero& n2)
 }
 //
 //
-    //CLASE FECHA
+    //CLASE TARJETA
 //
 //
+Tarjeta::Tarjeta(const Numero& n, Usuario& u, const Fecha& f): numero_(n), usuario_(&u), fech_caducidad(f)
+{
+    if(fech_caducidad < Fecha())
+    {
+        throw Caducada(fech_caducidad);
+    }
+
+    const char* aux = n;
+
+
+    switch(aux[0]){
+        case '4':
+            tipo_ = Tipo::VISA;
+            break;
+        case '5':
+            tipo_ = MasterCard;
+            break;
+        case '6':
+            tipo_ = Maestro;
+            break;
+        case '3':
+            if(aux[1] == 4 || aux[1] == 7)
+            {
+                tipo_ = AmericanExpress;
+            }
+            else{
+                tipo_ = JCB;
+            }
+            break;
+        default:
+            tipo_ = Otro;
+            break;
+    }
+}

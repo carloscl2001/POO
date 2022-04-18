@@ -6,6 +6,11 @@
 #include "usuario.hpp"
 #include <iostream>
 
+//
+//
+    //CLASE NUMERO
+//
+//
 
 class Numero
 {
@@ -36,6 +41,11 @@ class Numero
         
 };
 
+//
+//
+    //CLASE TARJETA
+//
+//
 
 class Tarjeta
 {
@@ -43,6 +53,7 @@ class Tarjeta
         enum Tipo {Otro,Visa,MasterCard, Maestro, JCB, AmericanExpress};
     
     private:
+        Tipo tipo_;
         Numero numero_;
         const Usuario* usuario;
         Fecha fech_caducidad;

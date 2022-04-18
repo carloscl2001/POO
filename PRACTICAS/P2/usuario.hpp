@@ -7,7 +7,11 @@
 #include <map>
 #include <unordered_map>
 #include <unordered_set>
-
+//
+//
+    //CLASE CLAVE
+//
+//
 
 class Clave
 {
@@ -31,7 +35,11 @@ class Clave
     private:
         Cadena contrasena_;
 };
-
+//
+//
+    //CLASE USUARIO
+//
+//
 class Usuario 
 {
     public:
@@ -52,8 +60,8 @@ class Usuario
         Articulos compra() const{return articulos_;}
 
         //ENLACE
-        void es_titular_de(const Tarjeta& t);
-        void no_es_titular_de(const Tarjeta& t);
+        void es_titular_de(Tarjeta& t);
+        void no_es_titular_de(Tarjeta& t);
 
         void compra(const Articulo& art, unsigned c = 1);
 

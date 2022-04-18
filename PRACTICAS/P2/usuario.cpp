@@ -5,7 +5,11 @@
 #include <iostream>
 #include <unistd.h>
 #include "usuario.hpp"
-
+//
+//
+    //CLASE CLAVE
+//
+//
 
 Clave::Clave(const char* cadena)
 {
@@ -42,10 +46,24 @@ bool Clave::verifica(const char* cad) const
     }
 }
 
+//
+//
+    //CLASE USUARIO
+//
+//
+
 Usuario::Usuario(const Cadena i, const Cadena n, const Cadena a, const Cadena d, const Clave c, const Tarjetas t, const Articulos at):identificador_(i), nombre_(n), apellidos_(a), dirreccion_(d), contrasena_(c), tarjetas_(t), articulos_(at)
 {
     if(!usuario_.insert(identificador_).second)
     {
         throw Id_duplicado(identificador_);
+    }
+}
+
+void Usuario::es_titular_de(Tarjeta& t)
+{
+    if(this == t.titular())
+    {
+
     }
 }

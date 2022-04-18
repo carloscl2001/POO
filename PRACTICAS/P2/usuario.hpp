@@ -2,6 +2,10 @@
 #define USUARIO_HPP
 
 #include "../P1/cadena.hpp"
+#include "tarjeta.hpp"
+#include "articulo.hpp"
+#include <map>
+#include <unordered_map>
 
 
 class Clave
@@ -27,6 +31,24 @@ class Clave
         Cadena contrasena_;
 };
 
+class Usuario 
+{
+    public:
+        typedef std::map<Numero, Tarjeta*> Tarjetas;
+        typedef std::unordered_map<Articulo*, unsigned > Articulos;
+    
+    private:
+        Cadena identificador_;
+        Cadena nombre_;
+        Cadena apellidos_;
+        Cadena dirreccion_;
+
+        Clave contrasena_;
+
+        Tarjetas tarjetas_;
+
+        Articulos articulos_;
+};
 
 
 

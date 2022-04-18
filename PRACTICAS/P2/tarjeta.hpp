@@ -1,8 +1,10 @@
-#include "../P1/cadena.hpp"
-#include <iostream>
-#include 
+#ifndef TARJETA_HPP
+#define TARJETA_HPP
 
-bool luhn(Cadena cadena);
+#include "../P1/cadena.hpp"
+#include "../P1/fecha.hpp"
+#include "usuario.hpp"
+#include <iostream>
 
 
 class Numero
@@ -13,7 +15,7 @@ class Numero
         
         Numero(const Cadena& cadena);
 
-        operator const char*() const;
+        operator const char*() const{return num_.c_str();}
 
         class Incorrecto
         {
@@ -28,6 +30,23 @@ class Numero
 
     private:
         Cadena num_;
+
+        Cadena elimina_espacios(const Cadena& cad);
+        Cadena longitud_cadena(const Cadena& cad);
         
 };
 
+
+class Tarjeta
+{
+    public:
+        enum Tipo {Otro,Visa,MasterCard, Maestro, JCB, AmericanExpress};
+    
+    private:
+        Numero numero_;
+        Usuario* usuario;
+        Fecha fech_caducidad;
+        bool vacia();
+
+};
+#endif

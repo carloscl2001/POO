@@ -66,7 +66,7 @@ class Tarjeta
         Numero numero_;
         const Usuario* usuario_;
         Fecha fech_caducidad;
-        bool vacia();
+        bool actividad_;
 
 };
 #endif

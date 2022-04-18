@@ -93,4 +93,8 @@ Tarjeta::Tarjeta(const Numero& n, Usuario& u, const Fecha& f): numero_(n), usuar
             tipo_ = Otro;
             break;
     }
+
+    actividad_ = true;
+
+    user.es_titular_de(*this);
 }

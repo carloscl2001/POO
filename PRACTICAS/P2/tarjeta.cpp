@@ -96,5 +96,5 @@ Tarjeta::Tarjeta(const Numero& n, Usuario& u, const Fecha& f): numero_(n), usuar
 
     actividad_ = true;
 
-    user.es_titular_de(*this);
+    u.es_titular_de(*this);
 }

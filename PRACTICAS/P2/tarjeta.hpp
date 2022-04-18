@@ -11,6 +11,7 @@
     //CLASE NUMERO
 //
 //
+class Usuario;
 
 class Numero
 {

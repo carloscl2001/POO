@@ -61,8 +61,9 @@ class Tarjeta
         bool activa() const {return actividad_;}
         Tipo tipo() const{return tipo_;}
 
-        
+        bool activa(bool b = true);
 
+        void anular_titular();
         
         class Caducada{
         public:
@@ -71,6 +72,10 @@ class Tarjeta
         private:
             Fecha fc_;
         };
+
+        class Desactivada{};
+
+        ~Tarjeta();
     
     private:
         Tipo tipo_;
@@ -80,4 +85,6 @@ class Tarjeta
         bool actividad_;
 
 };
+
+bool operator <(const Tarjeta& t1, const Tarjeta& t2);
 #endif

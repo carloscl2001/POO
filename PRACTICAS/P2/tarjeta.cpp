@@ -97,3 +97,29 @@ Tarjeta::Tarjeta(const Numero& n, Usuario& u, const Fecha& f): numero_(n), usuar
 
     u.es_titular_de(*this);
 }
+
+bool Tarjeta::activa(bool b)
+{
+    actividad_ = b;
+    return actividad_;
+}
+
+void Tarjeta::anular_titular()
+{
+    usuario_ = nullptr;
+    actividad_ = false;
+}
+
+Tarjeta::~Tarjeta()
+{
+    usuario_->no_es_titular_de(*this);
+}
+
+bool operator <(const Tarjeta& t1, const Tarjeta& t2)
+{
+    if(t1.numero() < t2.numero())
+    {
+        return true;
+    }
+    else{return false;}
+}

@@ -123,3 +123,54 @@ bool operator <(const Tarjeta& t1, const Tarjeta& t2)
     }
     else{return false;}
 }
+
+std::ostream& operator << (std::ostream& output ,const Tarjeta::Tipo& t)
+{
+
+    switch(t)
+    {
+        case 0: output << "Otro" ; break;
+        case 1: output << "VISA" ; break ;
+        case 2: output << "Mastercard"; break ;
+        case 3: output << "Maestro"; break ;
+        case 4: output << "JCB" ; break ;
+        case 5: output << "AmericanExpress" ; break ;
+
+        default: output << "Otra"; break ;
+    }
+
+    return output ;
+
+}
+
+std::ostream& operator << (std::ostream& output, const Tarjeta& t)
+{
+	Cadena aux1 = t.titular()->nombre();
+	Cadena aux2 = t.titular()->apellidos();
+
+
+	for(size_t i=0; i< aux1.length(); i++)
+	{
+		aux1[i] = toupper(aux1[i]);
+	}
+
+	for(size_t j=0; j< aux2.length(); j++)
+	{
+		aux2[j] = toupper(aux2[j]);
+	}
+
+	
+
+
+
+    output << t.tipo() << "\n"
+       << t.numero() << "\n"
+       << aux1 << " " << aux2 << "\n"
+       << "Caduca: "
+       << std::setfill('0') << std::setw(2) << t.caducidad().mes()
+       << "/"
+       << std::setw(2) << (t.caducidad().anno() % 100 ) << "\n" << std::endl;
+
+    return output ;
+
+}

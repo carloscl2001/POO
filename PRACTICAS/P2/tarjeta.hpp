@@ -86,5 +86,7 @@ class Tarjeta
 
 };
 
+std::ostream& operator << (std::ostream& output, const Tarjeta::Tipo& t) ;
+std::ostream& operator << (std::ostream& output, const Tarjeta& t) ;
 bool operator <(const Tarjeta& t1, const Tarjeta& t2);
 #endif

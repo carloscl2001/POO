@@ -65,7 +65,7 @@ class Tarjeta{
         bool activa() const {return activa_;}
 
         //ACTIVAR O DESACTIVAR LA TARJETA
-        bool activa(bool valor = true);
+        bool activa(bool valor);
 
         //DESENLACE CON USUARIO
         void anula_titular();

@@ -20,6 +20,24 @@ class Pedido{
         double total() const {return total_;}
         n_total_pedidos() const {return num_pedido_;}
 
+        //CLASES DE EXCEPCIONES
+        class Vacio{
+            public:
+                Vacio(usu): usu_(usu){}
+                Usuario& usuario() const{return *usu_;}
+            private:
+                Usuario* usu_;
+        };
+
+
+        class Impostor{
+            public:
+                Vacio(usu): usu_(usu){}
+                Usuario& usuario() const{return *usu_;}
+            private:
+                Usuario* usu_;
+        };
+
         //SOBRECARGA DEL OPERADOR DE INSERCION DE FLUJO
         
 

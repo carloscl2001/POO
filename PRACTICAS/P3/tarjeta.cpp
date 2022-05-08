@@ -15,7 +15,7 @@ bool luhn(const Cadena& num);
 //CONSTRUCTOR
 Numero::Numero(const Cadena& n): num_(elimina_espacio(n)){
 
-    if( std::find_if(num_.begin(), num_.end(), static_cast<int(*)(int)>(std::isdigit)) != num_.length() )
+    if( std::find_if(num_.begin(), num_.end(), std::not1(EsDigito())) != num_.end())
     {
         throw Incorrecto(Razon::DIGITOS) ;
     }

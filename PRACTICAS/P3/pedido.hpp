@@ -20,7 +20,6 @@ class Pedido{
         Fecha fecha()const {return fecha_;}
         double total() const {return total_;}
         n_total_pedidos() const {return num_pedido_;}
-
         //CLASES DE EXCEPCIONES
         class Vacio{
             public:
@@ -39,7 +38,6 @@ class Pedido{
         };
 
         class SinStock{
-
         }
         //SOBRECARGA DEL OPERADOR DE INSERCION DE FLUJO
         std::ostream& operator <<(std::ostream& os, const Pedido& p);

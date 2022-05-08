@@ -2,15 +2,16 @@
 #define PEDIDO_HPP
 
 #include "../P1/fecha.hpp"
-#include "../P2/numero.hpp"
-#include "../P2/tarjeta.hpp"
-#include "../P2/usuario.hpp"
+#include "numero.hpp"
+#include "tarjeta.hpp"
+#include "usuario.hpp"
 
 class Usuario_Pedido;
 class Pedido_Articulo;
 
 class Pedido{
     public:
+        //CONSTRUCTOR
         Fecha(Usuario_Pedido& usuped, Pedido_Articulo& pedart, Usuario& usu, Tarjeta& tar, const Fecha& fech = Fecha());
         
         //OBSERVADORES
@@ -29,7 +30,6 @@ class Pedido{
                 Usuario* usu_;
         };
 
-
         class Impostor{
             public:
                 Vacio(usu): usu_(usu){}
@@ -38,8 +38,11 @@ class Pedido{
                 Usuario* usu_;
         };
 
+        class SinStock{
+
+        }
         //SOBRECARGA DEL OPERADOR DE INSERCION DE FLUJO
-        
+        std::ostream& operator <<(std::ostream& os, const Pedido& p);
 
     private:
         

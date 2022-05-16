@@ -31,5 +31,44 @@ Pedido::Pedido(Usuario_Pedido& usuped, Pedido_Articulo& pedart, Usuario& usu, Ta
         throw Tarjeta::Desactivada();
     }
 
+    auto carro = usu.compra();
+
+    for(auto i: carro)
+    {
+        if((i.first)->stock() < (i.second))
+        {
+            const_cast<Usuario::Articulos&>(usu.compra()).clear();
+            throw SinStock(i.first);
+        }
+    }
+
+    carro = usu.compra();
+
+    for(auto it : carro)
+    {
+        unsigned int cant = (it.second);
+        Articulo* art = (it.first);
+        double price = art->precio();
+        art->stock() -= cant;
+
+        pedart.pedir(*this, *art, price, cant);
+        total_ += price * cant;
+        usu.compra(*art, 0);
+    }
+
+    usuped.asocia(usu, *this);
+
+    ++num_pedido_;
     
+}
+
+std::ostream& operator <<(std::ostream& os, const Pedido& p)
+{
+    os << "Núm. pedido:	" << p.numero() << std::endl ;
+    os << "Fecha:		" << p.fecha() << std::endl;
+    os << "Pagado con:	" << p.tarjeta()->tipo() << " n.º: "<< p.tarjeta()->numero() << std::endl ;
+    os << "Importe:	" << std::fixed << std::setprecision(2) << p.total() << " €" << std::endl ;
+
+
+    return os ;
 }

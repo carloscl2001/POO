@@ -4,6 +4,7 @@
 #include "../P1/cadena.hpp"
 #include "../P1/fecha.hpp"
 #include <iostream>
+#include <set>
 //
 // ------------| CLASE ARTICULO |------------|
 //
@@ -24,6 +25,10 @@ class Articulo
         unsigned& stock() {return stock_;}
 
         virtual void impresion_especifica(ostrea& os)
+
+        class Autores_vacios{};
+
+        typedef std::set<Autores*> Autores;
 
     private:
         Cadena cod_referencia_;
@@ -48,8 +53,27 @@ class ArticuloAlmacenable: public Articulo{
 
 class Libro: public ArticuloAlmacenable {
     public:
-        
+
     private:
+}
+
+
+class Autor{
+    public:
+        Autor(Cadena n, Cadena a, Cadena d);
+
+        Cadena nombre() const{return nombre_;}
+        Cadena apellidos() const{return apellidos_;}
+        Cadena direccion() const{return direccion_;}
+
+    private:
+        
+        Cadena nombre_;
+        Cadena apellidos_;
+        Cadena direccion_;
+
+
+
 }
 
 #endif

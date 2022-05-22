@@ -13,7 +13,7 @@ class Articulo
     public:
 
         //CONSTRUCTOR
-        Articulo(Cadena r, Cadena t, Fecha f, double p, int s = 0);
+        Articulo(const Autores& a, const Cadena& r, const Cadena& t, Fecha f, double p, int s = 0);
         
         //OBSERAVORES
         Cadena referencia() const {return cod_referencia_;}

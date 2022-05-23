@@ -24,7 +24,7 @@ class Articulo
         unsigned stock() const {return stock_;}
         unsigned& stock() {return stock_;}
 
-        virtual void impresion_especifica(ostrea& os)
+        virtual void impresion_especifica(ostrea& os);
 
         class Autores_vacios{};
 

@@ -18,20 +18,21 @@ class Articulo
         typedef std::set<Autores*> Autores;
         
         //CONSTRUCTOR
-        Articulo(const Autores& a, const Cadena& r, const Cadena& t, Fecha f, double p, int s = 0);
+        Articulo(const Autores& a, const Cadena& r, const Cadena& t, Fecha f, double p);
         
         //OBSERAVORES
         const Cadena& referencia() const noexcept{return cod_referencia_;}
         const Cadena& titulo() const noexcept{return titulo_; }
         const Fecha& f_publi() const noexcept{return fecha_publi_;}
         double precio() const noexcept{return precio_;}
+        
         double& precio() {return precio_;}
 
         const Autores& autores() const noexcept {return autor_;}
         
         //METODOS VIRTUALES
         virtual ~Articulo() {}
-        virtual void impresion_especifica(ostrea& os);
+        virtual void impresion_especifica(ostrea& os) const noexcept = 0;
 
         //CLASE DE EXCEPCION
         class Autores_vacios{};
@@ -53,41 +54,58 @@ class Articulo
 //
 class ArticuloAlmacenable: public Articulo{
     public:
-        Articulo(Cadena r, Cadena t, Fecha f, double p, int s = 0)
+        //CONSTRUCTOR
+        ArticuloAlmacenable(const Autores& a, const Cadena& r, const Cadena& t, Fecha f, double p, unsigned s = 0);
 
-        unsigned stock() const;
-        void stock();
+
+        unsigned stock() const noexcept {return stock_;}
+        unsigned& stock() const noexcept {return stock_;}
         
     private:
-}
+        unisgned stock_;
+};
 
 
 //
 // ------------| CLASE LIBRO |------------|
 //
-class Libro: public ArticuloAlmacenable {
+class Libro: public ArticuloAlmacenable{
     public:
+        Libro(const Autores& a, const Cadena& r, const Cadena& t, Fecha f, double p, unsigned p, unsigned s = 0): ArticuloAlmacenable(a, r, t, f, s), n_pag_(npag)
+        unsigned tam_() const noexcept{return tam_;}
+        void impresion_especifica(ostream& os) const noexcept;
 
     private:
+        const unsigned n_pag_;
 };
 
 //
 // ------------| CLASE CEDERRON |------------|
 //
-
+class ArticuloAlmacenable;
 class Cederron: public ArticuloAlmacenable {
     public:
+        Cederron(const Autores& a, const Cadena& r, const Cadena& t, const Fecha& f, double p, unsigned s, unsigned MB)
+        unsigned tam() const noexcept {return tam_;}
+        
+        void impresion_especifica(ostream& os) const noexcept;
 
     private:
+        const unsigned tam_;
 };
 
 //
 // ------------| CLASE LIBRODIGITAL |------------|
 //
-class LibroDigital: public LibroDigital {
+class LibroDigital: public Articulo {
     public:
+        LibroDigital(const Autores& a, const Cadena& r, const Cadena& t, const Fecha& f, double p, const Fecha& f_exp);
+        const Fecha& f_expir() const noexcept {return f_exp_;}
+
+        void impresion_especifica(ostream& os) const noexcept;
 
     private:
+        const Fecha f_exp_;
 };
 
 //
@@ -111,4 +129,6 @@ class Autor{
         Cadena direccion_;
 };
 
+//OPERADOR DE INSERCION DE FLUJO
+std::ostream& operator<< (std::ostream& os, const Articulo& art);
 #endif

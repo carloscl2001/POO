@@ -61,6 +61,6 @@ int main(){
 
     y.imag() = -y.imag();
 
-    if( z + y != Complejo(0,2 * z.imag()))  cout<<"Mal"
+    if( z + y != Complejo(0,2 * z.imag()))  cout<<"Mal";
 
 }

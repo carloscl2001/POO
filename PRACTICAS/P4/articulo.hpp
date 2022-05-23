@@ -5,6 +5,8 @@
 #include "../P1/fecha.hpp"
 #include <iostream>
 #include <set>
+
+class Autor;
 //
 // ------------| CLASE ARTICULO |------------|
 //
@@ -43,9 +45,6 @@ class Articulo
         
 
 };
-//OPERADOR DE INSERCION DE FLUJO
-std::ostream& operator <<(std::ostream& os, const Articulo& art);
-
 
 
 //

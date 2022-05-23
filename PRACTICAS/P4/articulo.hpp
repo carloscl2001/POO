@@ -29,7 +29,8 @@ class Articulo
 
         const Autores& autores() const noexcept {return autor_;}
         
-
+        //METODOS VIRTUALES
+        virtual ~Articulo() {}
         virtual void impresion_especifica(ostrea& os);
 
         //CLASE DE EXCEPCION

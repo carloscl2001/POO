@@ -41,6 +41,11 @@ class Articulo
 //OPERADOR DE INSERCION DE FLUJO
 std::ostream& operator <<(std::ostream& os, const Articulo& art);
 
+
+
+//
+// ------------| CLASE ARTICULOALMACENABLE |------------|
+//
 class ArticuloAlmacenable: public Articulo{
     public:
         Articulo(Cadena r, Cadena t, Fecha f, double p, int s = 0)
@@ -51,29 +56,54 @@ class ArticuloAlmacenable: public Articulo{
     private:
 }
 
+
+//
+// ------------| CLASE LIBRO |------------|
+//
 class Libro: public ArticuloAlmacenable {
     public:
 
     private:
 }
 
+//
+// ------------| CLASE CEDERRON |------------|
+//
 
+class Cederron: public ArticuloAlmacenable {
+    public:
+
+    private:
+};
+
+//
+// ------------| CLASE LIBRODIGITAL |------------|
+//
+class LibroDigital: public LibroDigital {
+    public:
+
+    private:
+};
+
+//
+// ------------| CLASE AUTOR |------------|
+//
 class Autor{
     public:
-        Autor(Cadena n, Cadena a, Cadena d);
+        
+        //CONSTRUCTOR
+        Autor(const Cadena& n, const Cadena& a, const Cadena& d);
 
-        Cadena nombre() const{return nombre_;}
-        Cadena apellidos() const{return apellidos_;}
-        Cadena direccion() const{return direccion_;}
+        //OBSERAVORES
+        const Cadena& nombre() const noexcept {return nombre_;}
+        const Cadena& apellidos() const noexcept {return apellidos_;}
+        const Cadena& direccion() const noexcept {return direccion_;}
 
     private:
         
         Cadena nombre_;
         Cadena apellidos_;
         Cadena direccion_;
-
-
-
-}
+};
 
 #endif

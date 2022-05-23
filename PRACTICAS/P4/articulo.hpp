@@ -12,30 +12,35 @@ class Articulo
 {
     public:
 
+        //SET DE AUTORES
+        typedef std::set<Autores*> Autores;
+        
         //CONSTRUCTOR
         Articulo(const Autores& a, const Cadena& r, const Cadena& t, Fecha f, double p, int s = 0);
         
         //OBSERAVORES
-        Cadena referencia() const {return cod_referencia_;}
-        Cadena titulo() const {return titulo_; }
-        Fecha f_publi() const {return fecha_publi_;}
-        double precio() const {return precio_;}
+        const Cadena& referencia() const noexcept{return cod_referencia_;}
+        const Cadena& titulo() const noexcept{return titulo_; }
+        const Fecha& f_publi() const noexcept{return fecha_publi_;}
+        double precio() const noexcept{return precio_;}
         double& precio() {return precio_;}
-        unsigned stock() const {return stock_;}
-        unsigned& stock() {return stock_;}
+
+        const Autores& autores() const noexcept {return autor_;}
+        
 
         virtual void impresion_especifica(ostrea& os);
 
+        //CLASE DE EXCEPCION
         class Autores_vacios{};
 
-        typedef std::set<Autores*> Autores;
 
     private:
+        Autores autor_;
         Cadena cod_referencia_;
         Cadena titulo_;
         Fecha fecha_publi_;
         double precio_;
-        unsigned stock_;
+        
 
 };
 //OPERADOR DE INSERCION DE FLUJO
@@ -64,7 +69,7 @@ class Libro: public ArticuloAlmacenable {
     public:
 
     private:
-}
+};
 
 //
 // ------------| CLASE CEDERRON |------------|

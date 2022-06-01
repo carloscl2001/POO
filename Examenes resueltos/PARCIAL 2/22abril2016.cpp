@@ -5,11 +5,15 @@ using namespace std;
 
 class A{
     public:
-        typedef map<char, C*> calificada_;
-        void asociaC(C&);
-        calificada_ asocaiC() const;
+        typedef map<int, C*> calificada;
+        calificada asociaC() const;
+        void asociaC(C& c)
+        {
+            calificada.insert(make_pair(int, &C));
+        };
 
     private:
+        calificada calificada_;
 
 };
 
@@ -27,10 +31,14 @@ class C{
         typedef set<D*> d_;
         void asociaD(D&);
         d_ asociaD() const;
-        C& c_;
+
+        //COMPOSICION
+        B b_;
+
+        int obs() {return c1;}
     
     private:
-        char c1 = 'i';
+        int c1;
 
 };
 

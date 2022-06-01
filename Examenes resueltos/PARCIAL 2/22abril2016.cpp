@@ -6,6 +6,8 @@ using namespace std;
 class A{
     public:
         typedef map<char, C*> calificada_;
+        void asociaC(C&);
+        calificada_ asocaiC() const;
 
     private:
 
@@ -14,6 +16,8 @@ class A{
 class B{
     public:
         typedef set<D*> d_;
+        void asociaB(D&);
+        d_ asociaB() const;
     private:
 
 };
@@ -21,6 +25,8 @@ class B{
 class C{
     public:
         typedef set<D*> d_;
+        void asociaD(D&);
+        d_ asociaD() const;
         C& c_;
     
     private:

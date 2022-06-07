@@ -1,7 +1,7 @@
 using namespace std;
 #include <iostream>
 #include <math.h>
-
+/*
 #include <iostream>
 #include <string>
 
@@ -69,7 +69,7 @@ int main() {
 }
 
 
-EJERCICIO3
+//EJERCICIO3
 class Forma{
     public:
         virtual double area() = 0;
@@ -129,3 +129,4 @@ int main(){
     }
     
 }
+*/

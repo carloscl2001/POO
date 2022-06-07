@@ -1,7 +1,8 @@
 using namespace std;
 #include <iostream>
 #include <math.h>
-/*#include <iostream>
+
+#include <iostream>
 #include <string>
 
 class Mamifero{
@@ -31,9 +32,9 @@ int main(){
     mp->saludo();
     delete mp;
 }
-*/
 
-/*
+
+
 //EJERICICO 2
 
 #include <math.h>
@@ -66,9 +67,8 @@ int main() {
     o->saludo();
     }
 }
-*/
 
-/*
+
 EJERCICIO3
 class Forma{
     public:
@@ -129,4 +129,3 @@ int main(){
     }
     
 }
-*/

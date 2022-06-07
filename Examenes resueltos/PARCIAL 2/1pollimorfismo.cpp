@@ -69,7 +69,7 @@ int main() {
 */
 
 /*
-//EJERCICIO3
+EJERCICIO3
 class Forma{
     public:
         virtual double area() = 0;

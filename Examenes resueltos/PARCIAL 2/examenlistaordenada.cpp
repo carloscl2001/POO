@@ -1,6 +1,7 @@
 #include <iostream>
 #include <list>
 #include <iterator>
+#include <algorithm>
 using namespace std;
 
 
@@ -24,7 +25,25 @@ void ListaOrdenada::insertar(double e){
     lista_.insert(lista_.end(),e);
 }
 
-iterator ListaOrdenada::buscar(double e) const{
-    
+ListaOrdenada::iterator ListaOrdenada::buscar(double e) const{
+    for(iterator it = lista_.cbegin(); it != lista_.cend(); it++)
+    {
+        if(*it == e)
+        {
+            return it;
+        }
+    }
+    return lista_.cend();
 }
 
+ListaOrdenada::iterator ListaOrdenada::begin() const{
+    return lista_.cbegin();
+}
+
+ListaOrdenada::iterator ListaOrdenada::end() const{
+    return lista_.cend();
+}
+
+size_t ListaOrdenada::contar(double e) const{
+    count_if(lista_.cbegin(),lista_.cend(), []);
+}

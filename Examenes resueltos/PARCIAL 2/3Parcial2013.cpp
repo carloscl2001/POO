@@ -6,7 +6,7 @@ class B{
     public:
         void f(){ cout<< "f() de B" << endl;}
         virtual void g() {cout << "g() de B "<< endl;}
-        virtual void h()=0;
+        virtual void h() = 0;
     protected:
         int b;
 };

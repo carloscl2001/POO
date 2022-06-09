@@ -10,6 +10,7 @@ class B{
     protected:
         int b;
 };
+
 class D1: virtual public B{
     public:
         void f(){ cout << "f() de D1" << endl;}
@@ -47,15 +48,45 @@ void f(B& b){
 
 int main(){
     
-    //B b, *pB; 
+    //B b,*pB; 
     //D1 d1; 
-    //D2 d2; D3 d3; D4 d4;
-    //f(b); f(d1); f(d2); f(d3); f(d4); 
-    //d4.D1::
+    D2 d2; D3 d3; D4 d4;
+    //f(b); f(d1);  no se pueden hacer
+
+    //f(d2);
+    //f externa
+    //f de B
+    //g de B
+    //h de D2
+
+    //f(d3);
+    //f externa
+    //f de B
+    //g de D3
+    //h de D3
+ 
+    //f(d4);
+    //f externa
+    //f de B
+    //g de D1
+    //h de D2
+    
+    //d4.D1::f();
+    //f de D1
+
     //d4.f(5);
+    //ambiguo
+
     //d4.f(3.5);
+    //ambiguo
+
     //d4.g();
+    //g de D1
+
     //d4.h();
+    //h de D2
+
+    //no esta definido pb ni pB
     //pB = new D4;
     //pB->f();
     //pb->D4::f(3);

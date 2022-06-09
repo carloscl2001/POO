@@ -53,7 +53,7 @@ class B{
     public:
         void f(){ cout<< "f() de B" << endl;}
         virtual void g() {cout << "g() de B "<< endl;}
-        virtual void h() {cout<< "h() de B"<<endl;}
+        virtual void h() =0;
     protected:
         int b;
 };
@@ -81,7 +81,7 @@ class D3: public D1{
         int d3;
 };
 
-class D4: virtual public D1, virtual public D2{
+class D4: public D1, public D2{
     private:
         int d4;
 };
@@ -95,10 +95,10 @@ void f(B& b){
 
 int main(){
     
-    B b,*pB; 
-    D1 d1; 
+    //B b,*pB; 
+    //D1 d1; 
     D2 d2; D3 d3; D4 d4;
-    f(b); f(d1);
+    //f(b); f(d1);
 
     f(d2);
     //f externa
@@ -121,11 +121,11 @@ int main(){
     d4.D1::f();
     //f de D1
 
-    d4.f(5);
-    //ambiguo
+    //d4.f(5);
+    //ambiguo, debemos acceder tipo d4.D1::f(5);
 
-    d4.f(3.5);
-    //ambiguo
+    //d4.f(3.5);
+    //ambiguo, debemos acceder tipo d4.D1::f(3.5);
 
     d4.g();
     //g de D1
@@ -134,11 +134,10 @@ int main(){
     //h de D2
 
     //no esta definido pb ni pB
-    pB = new D4;
-    pB->f();
-    pB->D4::f(3);
-    pB->g();
-    pB->h();
-
-    delete pB;
+    //pB = new D4;
+    //pB->f();
+    //pB->D4::f(3);
+    //pB->g();
+    //pB->h();
+    //delete pB;
 }

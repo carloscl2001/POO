@@ -4,24 +4,25 @@ using namespace std;
 class A{
     public:
         virtual void f() = 0;
-        virtual void g() {cout<<"g de A"<<endl;};
+        virtual void g() = 0;
 };
 
-class B: public A{
+class B: virtual public A{
     public:
         void f() {cout<<"f de B"<<endl;}
         //virtual void g() {cout<<"g de B"<<endl;}
         //void g(int) {cout<<"g int de B"<<endl;}
 };
 
-class C: public B{
+class C: virtual public A{
     public:
         void g() {cout<<"g de C"<<endl;}
 };
 
-class D: public C{
+class D: public B, public C{
     public:
         void g() {cout<<"g de D"<<endl;}
+        void g(int) {cout<<"g int de D"<<endl;}
 };
 
 void f(A& a){
@@ -30,10 +31,10 @@ void f(A& a){
 
 int main(){
     A *pa = new D();
-    B b;
+    D d;
     //a.g();
     
-    f(b);
+    f(d);
     pa->g();
 
     return 0;

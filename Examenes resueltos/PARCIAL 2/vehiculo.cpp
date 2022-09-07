@@ -58,3 +58,6 @@ void clasificacion(std::vector<vehiculo*> vehiculo_, std::vector<turismo*> turis
     }
 }
 
+int main(){
+    cout<<"hola";
+}

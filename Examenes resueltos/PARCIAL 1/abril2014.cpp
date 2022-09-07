@@ -54,13 +54,13 @@ int main(){
 
     i2 = i * i;
 
-    if(i2 == Complejo(2.5,1)) cout<<"ok";
-    if(i2 != -1.0) cout <<"mal";
+    if(i2 == Complejo(2.5,1)) cout<<"ok"<<std::endl;
+    if(i2 != -1.0) cout <<"mal"<<std::endl;
 
     z = y = Complejo(2.5,1);
 
     y.imag() = -y.imag();
 
-    if( z + y != Complejo(0,2 * z.imag()))  cout<<"Mal";
+    if( z + y != Complejo(0,2 * z.imag()))  cout<<"Mal"<<std::endl;
 
 }

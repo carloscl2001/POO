@@ -21,7 +21,7 @@ class Asignatura{
 
 class Profesor{
     public:
-        typedef set<Grupo*>  Grps;
+        typedef set<Grupo*> Grps;
         
         void imparte(Grps& g);
         const Grps& imparte() const;

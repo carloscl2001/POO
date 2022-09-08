@@ -10,12 +10,10 @@
 
 VPATH = ../Tests-auto:. ##ruta para los tests
 
-#Compilador y variables de opciones
 CXX = clang++	#Compilador de C++
 
-CPPFLAGS = -I../Tests-auto -I. -DP1       #Variables de opciones del preprocesador
-CXXFLAGS = -g -Wall -pedantic -std=c++11 #Variables de opciones del Compilador	
-
+CPPFLAGS = -I../Tests-auto -I. -DP1       
+CXXFLAGS = -g -Wall -pedantic -std=c++11 
 #Reglas principales
 all: test-P1-consola test-P1-auto
 

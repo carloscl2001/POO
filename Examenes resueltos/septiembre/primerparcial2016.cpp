@@ -1,43 +1,68 @@
 #include <iostream>
+#include <string>
 #include <set>
 #include <map>
 using namespace std;
 
-class A{
+class Alumno{
     public:
-        typedef map<string,C*> ma;
-        void imparte(C& c);
-        const ma& imparte() const;
+    private:
+};
+
+class Asignatura{
+    public:
+        typedef set<Grupo*> grupo;
+        void impardaen(Grupo& g);
+        grupo impardaen() const;
+
+    private:
+        grupo grupo_;
+};
+
+class Profesor{
+    public:
+        typedef set<Grupo*>  Grps;
+        
+        void imparte(Grps& g);
+        const Grps& imparte() const;
         
     private:
-        ma ma_;
+        Grps grps_;
 };
 
-class B{
-    public:
-        typedef set<D*> sd;
-        void imparte2(D& d);
-        sd& imaprte2() const;
+/*
+void Profesor::imparte(Grupo& g){
+    grps_.insert(&g);
+};
+*/
 
-    private:
-        sd sd_;
+const Profesor::Grps& Profesor::imparte() const{
+    return grps_;
 };
 
-class C{
+class Grupo{
     public:
-        int c1;
-        typedef set<D*> sd2;
-        B b_;
+        Profesor* p;
+        void impartido(Profesor& p);
+        Profesor& impartido() const;
+
+        Asignatura& a;
+        void daen(Asignatura& a);
+        Asignatura& daen() const;
     private:
-        sd2 sd2_;
+        string aula;
+        int h_semana;
 };
 
-class D{
-    public:
-        C* c;
-        B* b_;
-        void rel3(B& b);
-        B& rel3() const;
+void Grupo::impartido(Profesor& pro){
+    p = &pro;
+}
 
+class AGP{
+    public:
+        typedef map<Grupo*,Asignatura*> rd;
+        typedef map<Grupo&,Alumno*> ri;
     private:
+        rd rd_;
+        ri ri_;
 };

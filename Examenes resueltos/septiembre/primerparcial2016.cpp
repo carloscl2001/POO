@@ -24,17 +24,20 @@ class B{
 };
 
 class C{
-    private:
+    public:
         int c1;
         typedef set<D*> sd2;
         B b_;
-    public:
+    private:
         sd2 sd2_;
 };
 
 class D{
     public:
         C* c;
-        
+        B* b_;
+        void rel3(B& b);
+        B& rel3() const;
+
     private:
 };

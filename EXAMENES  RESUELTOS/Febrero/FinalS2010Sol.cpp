@@ -61,12 +61,12 @@ struct B {
 struct D:B {
     void f ( ) { std::cout<<"f ( ) de D" << std::endl;}
 };
-void f ( B *b) {
-    std::cout << "f ( ) externa"<< std::endl; b->f();
+void f ( B b) {
+    std::cout << "f ( ) externa"<< std::endl; b.f();
 }
 int main( ) {
     B b; 
     D d;
-    f(&b); // f externa y f de b
-    f(&d); // f externa y f de d
+    f(b); // f externa y f de b
+    f(d); // f externa y f de d
 }

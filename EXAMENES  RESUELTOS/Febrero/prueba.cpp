@@ -1,33 +1,17 @@
-#include <iostream>
+ #include <iostream>
 using namespace std;
-class Objeto
-{
+class A{
     public:
-        Objeto(char const *nombre): nombre (nombre) {
-        cout << "Constructor de Objeto para " << nombre << endl;
-        }
-        ~Objeto() {
-        cout << "Destructor de Objeto para " << nombre << endl;
-        }
-        void lanzamiento() {
-            Objeto o("objeto local de lanzamiento()");
-            cout << "Metodo lanzamiento() para " << nombre << endl;
-            throw &o;
-        }
-        void saludo() {
-        cout << "Hola de parte de " << nombre << endl;
-        }
-    private:
-        char const *nombre ;
+        void f(){cout<<"f de A"<<endl;}
+};
+
+class B:  public A{
+    public:
+        void f(){cout<<"f de B"<<endl;}
 };
 
 int main(){
-    Objeto o("objeto de main()");
-    try {
-        o.lanzamiento();
-    }
-    catch(Objeto *o) {
-        cout << "Excepcion capturada" << endl;
-        o->saludo();
-    }
+    A a;
+    B b{dynamic_cast<&B>(a)};
+
 }

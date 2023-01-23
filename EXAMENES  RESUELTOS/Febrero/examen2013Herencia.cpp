@@ -38,28 +38,28 @@ class D4: public D1, public D2{
 };
 
 void f(B& b){
-cout<< "f() externa" << endl;
-b.f();
-b.g();
-b.h();
+    cout<< "f() externa" << endl;
+    b.f();
+    b.g();
+    b.h();
 }
 
 int main(){
-B *pb;
-//D1 d1;
-D2 d2; D3 d3; D4 d4;
-//f(d2); f(d3); 
-//f(d4);
-//d4.D1::f();
-// d4.f(5);
-// d4.f(3.7);
-//d4.g();
-//d4.h();
-pb = new D4;
-//pb->f();
-//pb->f(3);
-//pb->g();
-//pb->h();
+    B *pb;
+    //D1 d1;
+    D2 d2; D3 d3; D4 d4;
+    //f(d2); f(d3); 
+    //f(d4);
+    //d4.D1::f();
+    // d4.f(5);
+    // d4.f(3.7);
+    //d4.g();
+    //d4.h();
+    pb = new D4;
+    pb->f();
+    //pb->f(3);
+    pb->g();
+    pb->h();
 delete pb;
 
 }

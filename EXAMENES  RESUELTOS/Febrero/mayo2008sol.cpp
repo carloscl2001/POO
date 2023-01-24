@@ -52,12 +52,12 @@ int main()
     pd = &d;   //no hace na
     pa = &d;    // tampoco
     cout<<"--------------------------------------------------------"<<endl;
-    // pa->f();    // Metodo de f() de A
-    // pc = &d;
-    // pc->f();
-    // pb = &d;
-    // pb->f();    //Metedo de f() de B
-    // d = *pa;    esto esta mal estamos asignando a una d algo de A y encima d ni es puntero
+    pa->f();    // Metodo de f() de A
+    pc = &d;
+    pc->f();
+    pb = &d;
+    pb->f();    //Metedo de f() de B
+    // d = *pa;    //esto esta mal estamos asignando a una d algo de A y encima d ni es puntero
     pd = (D *)pb; 
     pd->B::f(); // Metodo de f() de B
     d.C::f(); // Metodo de f() de C

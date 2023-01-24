@@ -55,23 +55,23 @@ void f(V& v ) {
 }
 
 int main(){
-    //V v;
+    // V v;
     // V *pV;
-    //X x;
+    // X x;
     // Y y;
     // W w;
-    // Z z;
-    //f(v);
-    //f(w);
+    Z z;
+    // f(v);
+    // f(w);
     // f(x);
-    //f(z);
+    // f(z);
     // z.X::f();
-    //z.f();
-    //z.f(5);
+    z.f();
+    z.f(5);
     // z.g(3);
     // z.h();s
     // pV = new Z;
-    //pV->f();
+    // pV->f();
     // pV->X::f();
     // pV->g();
     // pV->g(2.5);

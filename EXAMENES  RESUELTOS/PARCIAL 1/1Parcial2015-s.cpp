@@ -66,7 +66,7 @@ Vector::~Vector(){
     n = 0;
     delete[] datos;
 }
-/*
+
 int main(){
     
     const Vector v6 = {1,2,3,4,5,6};
@@ -77,7 +77,8 @@ int main(){
         std::cout<<e.what()<<std::endl;
     }
 }
-*/
+
+/*
 //EJERCICIO 2
 class doble{
     public:
@@ -100,3 +101,4 @@ int main(){
     d = a = b += c;
     std::cout << d << ' ' << a << ' ' << b << ' '<< c << std::endl; // 15,75 15,75 15,75 5,25
 }
+*/

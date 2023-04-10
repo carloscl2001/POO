@@ -16,10 +16,7 @@ class coordenada{
 
         void imprimir();
 
-        
-
-        //void n1(double x) {(*this).r = x;}
-        //double n1() const {cout<<r<<endl;}
+        //double n1_() const {cout<<r<<endl;}
 
         //double operator *(coordenada c1, coordenada c2);
     private:

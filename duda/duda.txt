@@ -1,0 +1,18 @@
+coordenada.cpp -> poniendo destructor se sigue usando el constructor de copia por omision
+
+En que casos es necesario hacer un destructor específico y no es necesario el destructor por omision..
+	En el destructor es solo las cosas dinamica o un tam hay que ponerlo  a 0?
+
+Como justificar en el examen que no es válido por defecto de algo(constructor de copia, movimiento......)
+
+Diferencia entre destruccion, copia y movimiento lógico.
+Es necesario llamar al destructor en el constructor de movimiento?
+
+Cuando hacemos movimiento, el objeto de origen en que estado debe de quedar?
+
+Cuando conviene mas meterlo dentro de la clase o afuera de la clase
+Si esta fuera, es mas correcto, hacerlo friend o hacer observadores y modificadores
+
+Diferencia entre preincremento y posincremento
+
+Un objeto Color b, utilizamos un operador de conversion a const char*, tras utilizarlo, b se encuentra convertido a const char*  o se considera que b sigue siendo un objeto de la clase Color

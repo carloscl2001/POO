@@ -53,31 +53,31 @@ using namespace std;
 // }
 
 
-// class punto {
-//     double x, y;
-// public:
-//     punto(double a = 0., double b = 0.) : x{a}, y{b} {
-//         std::cout << "Primer constructor(" << a << ", " << b << ")" << std::endl;
-//     }
-//     punto(const punto& p) : x{p.x}, y{p.y} {
-//         std::cout << "Segundo constructor" << std::endl;
-//     }
-//     punto& operator =(const punto& p)
-//     { x = p.x; y = p.y; return *this; 
-//         std::cout << "Asignacion" << std::endl;
-//     }
-// };
+class punto {
+    double x, y;
+public:
+    punto(double a = 0., double b = 0.) : x{a}, y{b} {
+        std::cout << "Primer constructor(" << a << ", " << b << ")" << std::endl;
+    }
+    punto(const punto& p) : x{p.x}, y{p.y} {
+        std::cout << "Segundo constructor" << std::endl;
+    }
+    punto& operator =(const punto& p)
+    { x = p.x; y = p.y; return *this; 
+        std::cout << "Asignacion" << std::endl;
+    }
+};
 
-// int main(){
-//     punto p;
-//     punto q{};
-//     punto r{2.,};
-//     punto s{3.4};
-//     punto t{};
-//     punto u(q);
-//     punto v = p;
-//     t = q;
-// }
+int main(){
+    punto p;
+    punto q{};
+    punto r{2.,};
+    punto s{3.4};
+    punto t{};
+    punto u(q);
+    punto v = p;
+    t = q;
+}
 
 // class Libro1 {
 //     string titulo_;

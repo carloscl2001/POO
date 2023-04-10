@@ -4,11 +4,11 @@ using namespace std;
 class complejo{
     public:
 
-        //~complejo(){cout<<"destructor"<<endl;};
+        ~complejo(){cout<<"destructor"<<endl;};
 
-        // complejo(const complejo &&c): r(c.r), i(c.i){
+        // complejo(const complejo &c): r(c.r), i(c.i){
         //     cout<<"constructor por copia"<<endl;
-        // };
+        //};
 
         complejo(double n1 = 0, double n2 = 0): r(n1), i(n2){
             cout<<"constructor por defecto"<<endl;

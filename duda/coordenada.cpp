@@ -10,7 +10,7 @@ class coordenada{
         //     cout<<"constructor por copia"<<endl;
         //};
 
-        coordenada(double n = 0, double d = 0): n1(n), n2(d){
+        coordenada(double n = 0.0, double d = 0.0): n1(n), n2(d){
             cout<<"constructor por defecto"<<endl;
         };
 

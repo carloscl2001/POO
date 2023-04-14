@@ -1,35 +1,35 @@
 #include <iostream>
-// class racional
-// {
-//     public:
-//         racional(int n1 = 0, int n2 = 1);
-//         racional operator/=(const racional& r);
-//         racional operator*=(const racional& r);
-//         friend racional operator*(const racional& r1, const racional& r2);
-//         friend racional operator/(const racional& r1, const racional& r2);
-//         friend bool operator<(const racional&, const racional&);
-//         friend bool operator>=(const racional&, const racional&);
-//         racional inv() const;
-//     private:
-//         int n,d;
-//         int mcd(unsigned int, unsigned int);
-// };
+class racional
+{
+    public:
+        racional(int n1 = 0, int n2 = 1);
+        racional operator/=(const racional& r);
+        racional operator*=(const racional& r);
+        friend racional operator*(const racional& r1, const racional& r2);
+        friend racional operator/(const racional& r1, const racional& r2);
+        friend bool operator<(const racional&, const racional&);
+        friend bool operator>=(const racional&, const racional&);
+        racional inv() const;
+    private:
+        int n,d;
+        int mcd(unsigned int, unsigned int);
+};
 
-// racional::racional(int n1, int n2):n(n1), d(n2){
-//     if(n1 == 0){
-//         n = 0;
-//         d = 1;
-//     }else if(d <= 0 ){
-//         n = -n1;
-//         d = -n2;
-//     }
+racional::racional(int n1, int n2):n(n1), d(n2){
+    if(n1 == 0){
+        n = 0;
+        d = 1;
+    }else if(d <= 0 ){
+        n = -n1;
+        d = -n2;
+    }
 
-//     // if((n1 && n2) % mcd(n1,n2) == 0){
-//     //     n1 /= mcd(n1,n2);
-//     //     n2 /= mcd(n1,n2);
-//     // }
+    if((n1 && n2) % mcd(n1,n2) == 0){
+        n1 /= mcd(n1,n2);
+        n2 /= mcd(n1,n2);
+    }
 
-// }
+}
 
 // racional racional::operator*=(const racional& r){
 //     this->n *= r.n;

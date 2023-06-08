@@ -92,11 +92,11 @@ bool MatrizDispersa::buscar(size_t fil, size_t col, size_t& indice){
     terna aux; aux.f = fil; aux.c = col;
 
     while(ind < val.size() && val[ind] < aux){
-            if(val[ind].f == fil && val[ind].c == col){
-                indice = ind;
-                return true;
-            }
-            ind++;
+        if(val[ind].f == fil && val[ind].c == col){
+            indice = ind;
+            return true;
+        }
+        ind++;
     }
     if(ind == val.size()){
         indice = n_valores();

@@ -45,5 +45,5 @@ ListaOrdenada::iterator ListaOrdenada::end() const{
 }
 
 size_t ListaOrdenada::contar(double e) const{
-    return count_if(lista_.cbegin(),lista_.cend(), [e](double e1)->bool{return e == e1;});
+    return count_if(lista_.cbegin(),lista_.cend(), [e,&it]()->bool{return e == e1;});
 }

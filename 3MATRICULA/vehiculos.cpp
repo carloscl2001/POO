@@ -72,11 +72,6 @@ int main(){
     vector<Camion*> camiones;
     clasificarVehiculos(vehiculos, turismos, camiones);
 
-    // Imprimir los turismos
-    cout << "Turismos:" << endl;
-    for (Turismo* turismo : turismos) {
-        turismo->imprimir();
-    }
 }
 
 

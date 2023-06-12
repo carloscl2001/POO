@@ -33,7 +33,7 @@ int main(){
     delete mp;
 }
 
-
+*/
 
 //EJERICICO 2
 
@@ -42,18 +42,18 @@ using namespace std;
 class Objeto{
     public:
         Objeto(char const *nombre): nombre_(nombre) {
-        cout << "Constructor de Objeto para " << nombre_ << endl;
+            cout << "Constructor de Objeto para " << nombre_ << endl;
         }
         ~Objeto() {
-        cout << "Destructor de Objeto para " << nombre_ << endl;
+            cout << "Destructor de Objeto para " << nombre_ << endl;
         }
         void lanzamiento() {
-        Objeto o("'objeto local de lanzamiento()'");
-        cout << "Metodo lanzamiento() para " << nombre_ << endl;
-        throw &o;
+            Objeto* o = new Objeto("'objeto local de lanzamiento()'");
+            cout << "Metodo lanzamiento() para " << nombre_ << endl;
+            throw o;
         }
         void saludo() {
-        cout << "Hola de parte de " << nombre_ << endl;
+            cout << "Hola de parte de " << nombre_ << endl;
         }
     private:
         char const *nombre_;
@@ -68,7 +68,7 @@ int main() {
     }
 }
 
-
+/*
 //EJERCICIO3
 class Forma{
     public:

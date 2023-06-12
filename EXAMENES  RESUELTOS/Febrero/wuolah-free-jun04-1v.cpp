@@ -95,11 +95,10 @@ ostream& operator <<(ostream& os, const Cadena& cad){
 }
 
 //Ejercicio 4
-//a)
 template <typename iterator>
 bool ordenado(iterator begin, iterator end){
     for(auto i = begin +1; i != end ; i++){
-        if(*i < *(i -1)) return false;
+        if(*i < *(i -1)) return false
     }
 
     return true;
@@ -107,10 +106,11 @@ bool ordenado(iterator begin, iterator end){
 
 template <typename iterator, typename T>
 bool ordenado(iterator begin, iterator end, T func){
-    for(iterator i = begin ; i != end ; i++){
-        if(func(*i, *(i++))) return true;
+    for(iterator i = begin +1; i != end ; i++){
+        if(func(i, i-1)) return false
     }
-    return false;
+
+    return true;
 }
 
 

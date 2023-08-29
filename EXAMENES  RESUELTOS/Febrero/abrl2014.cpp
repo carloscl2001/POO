@@ -75,7 +75,6 @@ class A{};
 class B{
     public:
         B(int i, const char* s = "", int j = 0);
-        B(const B& b);
         B& operator = (const B& b);
         B& operator = (const A& a);
         operator A() const;
@@ -83,12 +82,12 @@ class B{
 
 int main(){
     A a1, a2;
-    B b1 = 0;
+    // B b1 = 0;s
     // B* p = nesw B(10);
     // B* q = new B[10];sss
-    // B b2 = "examen";s
+    // B b2 = "examen";sss
     // A a3(b1);s
-    // a2 = a1 = *q;
+    // a2 = a1 = *q;s
     // B b3 = a2;s
     cout<<"hola"<<endl;
 }

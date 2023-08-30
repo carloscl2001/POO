@@ -24,10 +24,10 @@ class Cadena{
 
 //a)
 Cadena::Cadena(size_t n):n_(n), pc_(new char[n+1]){
-    for(size_t i = 0; i < n+1; i++){
+    for(size_t i = 0; i < n; i++){
         pc_[i] = ' ';
     }
-    pc_[n+1] = '\0';
+    pc_[n] = '\0';
 }
 
 //b)Se pone explicit y ponemos n = 0

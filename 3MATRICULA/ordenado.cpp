@@ -29,6 +29,5 @@ struct funcion{
 int main(){
     int v[6] = {1,2,3,4,5,6};
     funcion f;
-    int a, b;
     cout << ordenado(&v[0], &v[5], f);
 }
